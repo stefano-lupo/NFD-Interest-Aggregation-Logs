@@ -1,0 +1,366 @@
+NFD version 0.6.5 starting
+Built with GNU C++ version 7.3.0, with GNU libstdc++ version 20180720, with Boost version 1.65.1, with libpcap version 1.8.1, with WebSocket++ version 0.8.1, with ndn-cxx version 0.6.5
+1552512727.634727 DEBUG: [nfd.ContentStore] set-policy lru
+1552512727.634754 INFO: [nfd.CsPolicy] setLimit 10
+1552512727.634812 INFO: [nfd.StrategyChoice] setDefaultStrategy /localhost/nfd/strategy/best-route/%FD%05
+1552512727.636413 INFO: [nfd.InternalForwarderTransport] [id=0,local=null://,remote=null://] Creating transport
+1552512727.636435 INFO: [nfd.FaceTable] Added face id=255 remote=null:// local=null://
+1552512727.636446 INFO: [nfd.InternalForwarderTransport] [id=0,local=contentstore://,remote=contentstore://] Creating transport
+1552512727.636451 INFO: [nfd.FaceTable] Added face id=254 remote=contentstore:// local=contentstore://
+1552512727.636487 INFO: [nfd.InternalForwarderTransport] [id=0,local=internal://,remote=internal://] Creating transport
+1552512727.636544 INFO: [nfd.FaceTable] Added face id=1 remote=internal:// local=internal://
+1552512727.637083 WARNING: [nfd.CommandAuthenticator] 'certfile any' is intended for demo purposes only and SHOULD NOT be used in production environments
+1552512727.637352 INFO: [nfd.StrategyChoice] changeStrategy(/ndn/broadcast) /localhost/nfd/strategy/best-route/%FD%05 -> /localhost/nfd/strategy/multicast/%FD%03
+1552512727.637402 INFO: [nfd.StrategyChoice] changeStrategy(/localhost) /localhost/nfd/strategy/best-route/%FD%05 -> /localhost/nfd/strategy/multicast/%FD%03
+1552512727.637442 INFO: [nfd.StrategyChoice] changeStrategy(/localhost/nfd) /localhost/nfd/strategy/multicast/%FD%03 -> /localhost/nfd/strategy/best-route/%FD%05
+1552512727.637474 INFO: [nfd.CsPolicy] setLimit 65536
+1552512727.637486 DEBUG: [nfd.ContentStore] set-policy lru
+1552512727.637495 INFO: [nfd.CsPolicy] setLimit 65536
+1552512727.637547 INFO: [nfd.EthernetFactory] enabling multicast on 01:00:5e:00:17:aa
+1552512727.637605 INFO: [nfd.TcpChannel] [tcp4://0.0.0.0:6363] Creating channel
+1552512727.637669 INFO: [nfd.TcpChannel] [tcp6://[::]:6363] Creating channel
+1552512727.637762 INFO: [nfd.UdpChannel] [udp4://0.0.0.0:6363] Creating channel
+1552512727.637820 INFO: [nfd.UdpChannel] [udp6://[::]:6363] Creating channel
+1552512727.637865 INFO: [nfd.UdpFactory] enabling multicast on 224.0.23.170:56363
+1552512727.637889 INFO: [nfd.UdpFactory] enabling multicast on [ff02::1234]:56363
+1552512727.637996 INFO: [nfd.UnixStreamChannel] [unix:///run/nfd.sock] Creating channel
+1552512727.638192 INFO: [nfd.WebSocketChannel] [ws://0.0.0.0:9696] Creating channel
+1552512727.638262 INFO: [nfd.WebSocketChannel] [ws://[::]:9696] Creating channel
+1552512727.638331 INFO: [nfd.CommandAuthenticator] clear-authorizations
+1552512727.638380 WARNING: [nfd.CommandAuthenticator] 'certfile any' is intended for demo purposes only and SHOULD NOT be used in production environments
+1552512727.638407 INFO: [nfd.CommandAuthenticator] authorize module=faces signer=any
+1552512727.638431 INFO: [nfd.CommandAuthenticator] authorize module=fib signer=any
+1552512727.638444 INFO: [nfd.CommandAuthenticator] authorize module=cs signer=any
+1552512727.638457 INFO: [nfd.CommandAuthenticator] authorize module=strategy-choice signer=any
+1552512727.638834 INFO: [nfd.EthernetChannel] [dev://eth0] Creating channel
+1552512727.648220 INFO: [nfd.RibManager] Start monitoring face create/destroy events
+1552512727.743355 INFO: [nfd.MulticastEthernetTransport] [id=0,local=dev://eth0,remote=ether://[01:00:5e:00:17:aa]] Creating transport
+1552512727.743867 INFO: [nfd.FaceTable] Added face id=256 remote=ether://[01:00:5e:00:17:aa] local=dev://eth0
+1552512727.749602 INFO: [nfd.EthernetChannel] [dev://eth1] Creating channel
+1552512727.851386 INFO: [nfd.MulticastEthernetTransport] [id=0,local=dev://eth1,remote=ether://[01:00:5e:00:17:aa]] Creating transport
+1552512727.851844 INFO: [nfd.FaceTable] Added face id=257 remote=ether://[01:00:5e:00:17:aa] local=dev://eth1
+1552512727.855802 INFO: [nfd.UnixStreamTransport] [id=0,local=unix:///run/nfd.sock,remote=fd://30] Creating transport
+1552512727.855824 INFO: [nfd.FaceTable] Added face id=258 remote=fd://30 local=unix:///run/nfd.sock
+1552512727.858899 DEBUG: [nfd.Forwarder] onIncomingData face=1 data=/localhost/nfd/faces/events/%FE%00
+1552512727.858925 DEBUG: [nfd.Forwarder] onDataUnsolicited face=1 data=/localhost/nfd/faces/events/%FE%00 decision=drop
+1552512727.858954 DEBUG: [nfd.Forwarder] onIncomingData face=1 data=/localhost/nfd/faces/events/%FE%01
+1552512727.858975 DEBUG: [nfd.Forwarder] onDataUnsolicited face=1 data=/localhost/nfd/faces/events/%FE%01 decision=drop
+1552512727.859016 DEBUG: [nfd.Forwarder] onIncomingInterest face=258 interest=/localhost/nfd/fib/add-nexthop/h%1A%07%15%08%09localhost%08%03nfd%08%03ribi%01%00/%00%00%01ix%F8%3AX/%2B%E0%A4SG%C3%D6u/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00%7C%B1%C7a%C1%A9%3A%D8%C4%0B%5E%BC%20%A5%A9%20%90J%DE8%0B%FE%40%9A%EC%0F%F0%B3%F9%60%2C%A4I%85%A7d%A9f%F5%2F%D3%C7%8A%EC%A3%08%EC%E5%FE%8D%11%F9%80%1F%8B.%83j0~%3C%26%E6G%D0%86%B3fh%27%2F%23%92%7FK%9E%E0%3C%B4%9C%B6BYjF%BA%AA%F0%E7%F1%FE%CF%8A%CB%04%88%3C%02y%1E%8A%E2%D5%8E%EA%8A%8E%16%09%26O%213%22c%94%F2%29%E1%B3%D6%29%F9%E09%9E~n%230%D3%D0%B7%10%AA%24%A4%14%FA%5BL%B2%CB%3E%E5%C1%B5%3F%60%0C%3Fu%D8M%C4w%8A%2B%86O%8F%92%87%3D%C26%C6I%C7%8C7%A5M%11Wb%3E%CE%18%06e%D3pI%AEX%C20%95%D3%0F%EE%F0%0B%C8%20%B8%B8%91%BE%D9%05%00%D6%16%9A%3Eg%3B%F1%84%28%F4%15%5D%A9%0A%CF%7C%27%98%A3L%BD%17%95%E4%0A%CEQ%A0%B5%07%D5h%15%A4%28%B4%A8%98%F1C%1Bk%AC%FD-%94%27Ee%06%1D%AD%FA
+1552512727.859120 DEBUG: [nfd.ContentStore] find /localhost/nfd/fib/add-nexthop/h%1A%07%15%08%09localhost%08%03nfd%08%03ribi%01%00/%00%00%01ix%F8%3AX/%2B%E0%A4SG%C3%D6u/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00%7C%B1%C7a%C1%A9%3A%D8%C4%0B%5E%BC%20%A5%A9%20%90J%DE8%0B%FE%40%9A%EC%0F%F0%B3%F9%60%2C%A4I%85%A7d%A9f%F5%2F%D3%C7%8A%EC%A3%08%EC%E5%FE%8D%11%F9%80%1F%8B.%83j0~%3C%26%E6G%D0%86%B3fh%27%2F%23%92%7FK%9E%E0%3C%B4%9C%B6BYjF%BA%AA%F0%E7%F1%FE%CF%8A%CB%04%88%3C%02y%1E%8A%E2%D5%8E%EA%8A%8E%16%09%26O%213%22c%94%F2%29%E1%B3%D6%29%F9%E09%9E~n%230%D3%D0%B7%10%AA%24%A4%14%FA%5BL%B2%CB%3E%E5%C1%B5%3F%60%0C%3Fu%D8M%C4w%8A%2B%86O%8F%92%87%3D%C26%C6I%C7%8C7%A5M%11Wb%3E%CE%18%06e%D3pI%AEX%C20%95%D3%0F%EE%F0%0B%C8%20%B8%B8%91%BE%D9%05%00%D6%16%9A%3Eg%3B%F1%84%28%F4%15%5D%A9%0A%CF%7C%27%98%A3L%BD%17%95%E4%0A%CEQ%A0%B5%07%D5h%15%A4%28%B4%A8%98%F1C%1Bk%AC%FD-%94%27Ee%06%1D%AD%FA L
+1552512727.859195 DEBUG: [nfd.ContentStore]   no-match
+1552512727.859204 DEBUG: [nfd.Forwarder] onContentStoreMiss interest=/localhost/nfd/fib/add-nexthop/h%1A%07%15%08%09localhost%08%03nfd%08%03ribi%01%00/%00%00%01ix%F8%3AX/%2B%E0%A4SG%C3%D6u/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00%7C%B1%C7a%C1%A9%3A%D8%C4%0B%5E%BC%20%A5%A9%20%90J%DE8%0B%FE%40%9A%EC%0F%F0%B3%F9%60%2C%A4I%85%A7d%A9f%F5%2F%D3%C7%8A%EC%A3%08%EC%E5%FE%8D%11%F9%80%1F%8B.%83j0~%3C%26%E6G%D0%86%B3fh%27%2F%23%92%7FK%9E%E0%3C%B4%9C%B6BYjF%BA%AA%F0%E7%F1%FE%CF%8A%CB%04%88%3C%02y%1E%8A%E2%D5%8E%EA%8A%8E%16%09%26O%213%22c%94%F2%29%E1%B3%D6%29%F9%E09%9E~n%230%D3%D0%B7%10%AA%24%A4%14%FA%5BL%B2%CB%3E%E5%C1%B5%3F%60%0C%3Fu%D8M%C4w%8A%2B%86O%8F%92%87%3D%C26%C6I%C7%8C7%A5M%11Wb%3E%CE%18%06e%D3pI%AEX%C20%95%D3%0F%EE%F0%0B%C8%20%B8%B8%91%BE%D9%05%00%D6%16%9A%3Eg%3B%F1%84%28%F4%15%5D%A9%0A%CF%7C%27%98%A3L%BD%17%95%E4%0A%CEQ%A0%B5%07%D5h%15%A4%28%B4%A8%98%F1C%1Bk%AC%FD-%94%27Ee%06%1D%AD%FA
+1552512727.859273 DEBUG: [nfd.Forwarder] onOutgoingInterest face=1 interest=/localhost/nfd/fib/add-nexthop/h%1A%07%15%08%09localhost%08%03nfd%08%03ribi%01%00/%00%00%01ix%F8%3AX/%2B%E0%A4SG%C3%D6u/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00%7C%B1%C7a%C1%A9%3A%D8%C4%0B%5E%BC%20%A5%A9%20%90J%DE8%0B%FE%40%9A%EC%0F%F0%B3%F9%60%2C%A4I%85%A7d%A9f%F5%2F%D3%C7%8A%EC%A3%08%EC%E5%FE%8D%11%F9%80%1F%8B.%83j0~%3C%26%E6G%D0%86%B3fh%27%2F%23%92%7FK%9E%E0%3C%B4%9C%B6BYjF%BA%AA%F0%E7%F1%FE%CF%8A%CB%04%88%3C%02y%1E%8A%E2%D5%8E%EA%8A%8E%16%09%26O%213%22c%94%F2%29%E1%B3%D6%29%F9%E09%9E~n%230%D3%D0%B7%10%AA%24%A4%14%FA%5BL%B2%CB%3E%E5%C1%B5%3F%60%0C%3Fu%D8M%C4w%8A%2B%86O%8F%92%87%3D%C26%C6I%C7%8C7%A5M%11Wb%3E%CE%18%06e%D3pI%AEX%C20%95%D3%0F%EE%F0%0B%C8%20%B8%B8%91%BE%D9%05%00%D6%16%9A%3Eg%3B%F1%84%28%F4%15%5D%A9%0A%CF%7C%27%98%A3L%BD%17%95%E4%0A%CEQ%A0%B5%07%D5h%15%A4%28%B4%A8%98%F1C%1Bk%AC%FD-%94%27Ee%06%1D%AD%FA
+1552512727.859369 DEBUG: [nfd.Forwarder] onIncomingInterest face=258 interest=/localhost/nfd/faces/events
+1552512727.859397 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events L
+1552512727.859422 DEBUG: [nfd.ContentStore]   no-match
+1552512727.859434 DEBUG: [nfd.Forwarder] onContentStoreMiss interest=/localhost/nfd/faces/events
+1552512727.859457 DEBUG: [nfd.Forwarder] onOutgoingInterest face=1 interest=/localhost/nfd/faces/events
+1552512727.859507 DEBUG: [nfd.Forwarder] onIncomingInterest face=258 interest=/localhost/nfd/faces/update/h%06l%01%01p%01%01/%00%00%01ix%F8%3A%60/%C7%D7%92%1E%92%15%F93/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00T%1C%A1%83%C7y%7C%EEB%15%D7%1FKx%E1%C2L%9C%A3z9%8A%21%06%B2%1F%3AT%87%09w%F0%A2%15%DD%BD%5D%BD%05%BB%3F%00%5B2%C7%18%92%AB%BE%8D%AE%03%09%E5-o%94%C1s%1CG%FE%A0-%D1%B6%8D%9F%0C%BE9k%C5%0A%FE%A9%C4%CDD%03%C7%C7%EA%D9%1B%C2%0C%A5%C3%9E%94%B1%5CW%DD%B4%B5%2F%DC%1Fg%0FN%01%BB%25%8C%11%D5Y%FB%8Eo%A1%B2%17%9B%7D%07m%95%FEKvQ%CB%9A%BC%0F%1E%82%B2%D2%9B%99%0D%E4%21%98%40k%C8%24a%3C%28%86%8E%D5_%0D%0Bz%178%89%BC%02%20%CC%D1%A5S%A6%A5%B2%3B%DE%B0d%DF%AB%5B%C1%C6%FE%17%C7Y~%E5%DFC%86%EAjg%E7%F7%AD%14.%F9K%24%EC%D8E%26%A2%00C%F9JK%D2%83%D4%CE1%9C%20%0A%AC%E4g%237%24%B4%A2%09%D5%DE%86%FF%94%B9%7B%E5%85%FD%9Bq%8FN%B8%05%18%D4%11v%DB%BE%CE%BEQ%1C%F6%80%DF%EC%CAX%8B_
+1552512727.859593 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/update/h%06l%01%01p%01%01/%00%00%01ix%F8%3A%60/%C7%D7%92%1E%92%15%F93/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00T%1C%A1%83%C7y%7C%EEB%15%D7%1FKx%E1%C2L%9C%A3z9%8A%21%06%B2%1F%3AT%87%09w%F0%A2%15%DD%BD%5D%BD%05%BB%3F%00%5B2%C7%18%92%AB%BE%8D%AE%03%09%E5-o%94%C1s%1CG%FE%A0-%D1%B6%8D%9F%0C%BE9k%C5%0A%FE%A9%C4%CDD%03%C7%C7%EA%D9%1B%C2%0C%A5%C3%9E%94%B1%5CW%DD%B4%B5%2F%DC%1Fg%0FN%01%BB%25%8C%11%D5Y%FB%8Eo%A1%B2%17%9B%7D%07m%95%FEKvQ%CB%9A%BC%0F%1E%82%B2%D2%9B%99%0D%E4%21%98%40k%C8%24a%3C%28%86%8E%D5_%0D%0Bz%178%89%BC%02%20%CC%D1%A5S%A6%A5%B2%3B%DE%B0d%DF%AB%5B%C1%C6%FE%17%C7Y~%E5%DFC%86%EAjg%E7%F7%AD%14.%F9K%24%EC%D8E%26%A2%00C%F9JK%D2%83%D4%CE1%9C%20%0A%AC%E4g%237%24%B4%A2%09%D5%DE%86%FF%94%B9%7B%E5%85%FD%9Bq%8FN%B8%05%18%D4%11v%DB%BE%CE%BEQ%1C%F6%80%DF%EC%CAX%8B_ L
+1552512727.859661 DEBUG: [nfd.ContentStore]   no-match
+1552512727.859674 DEBUG: [nfd.Forwarder] onContentStoreMiss interest=/localhost/nfd/faces/update/h%06l%01%01p%01%01/%00%00%01ix%F8%3A%60/%C7%D7%92%1E%92%15%F93/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00T%1C%A1%83%C7y%7C%EEB%15%D7%1FKx%E1%C2L%9C%A3z9%8A%21%06%B2%1F%3AT%87%09w%F0%A2%15%DD%BD%5D%BD%05%BB%3F%00%5B2%C7%18%92%AB%BE%8D%AE%03%09%E5-o%94%C1s%1CG%FE%A0-%D1%B6%8D%9F%0C%BE9k%C5%0A%FE%A9%C4%CDD%03%C7%C7%EA%D9%1B%C2%0C%A5%C3%9E%94%B1%5CW%DD%B4%B5%2F%DC%1Fg%0FN%01%BB%25%8C%11%D5Y%FB%8Eo%A1%B2%17%9B%7D%07m%95%FEKvQ%CB%9A%BC%0F%1E%82%B2%D2%9B%99%0D%E4%21%98%40k%C8%24a%3C%28%86%8E%D5_%0D%0Bz%178%89%BC%02%20%CC%D1%A5S%A6%A5%B2%3B%DE%B0d%DF%AB%5B%C1%C6%FE%17%C7Y~%E5%DFC%86%EAjg%E7%F7%AD%14.%F9K%24%EC%D8E%26%A2%00C%F9JK%D2%83%D4%CE1%9C%20%0A%AC%E4g%237%24%B4%A2%09%D5%DE%86%FF%94%B9%7B%E5%85%FD%9Bq%8FN%B8%05%18%D4%11v%DB%BE%CE%BEQ%1C%F6%80%DF%EC%CAX%8B_
+1552512727.859738 DEBUG: [nfd.Forwarder] onOutgoingInterest face=1 interest=/localhost/nfd/faces/update/h%06l%01%01p%01%01/%00%00%01ix%F8%3A%60/%C7%D7%92%1E%92%15%F93/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00T%1C%A1%83%C7y%7C%EEB%15%D7%1FKx%E1%C2L%9C%A3z9%8A%21%06%B2%1F%3AT%87%09w%F0%A2%15%DD%BD%5D%BD%05%BB%3F%00%5B2%C7%18%92%AB%BE%8D%AE%03%09%E5-o%94%C1s%1CG%FE%A0-%D1%B6%8D%9F%0C%BE9k%C5%0A%FE%A9%C4%CDD%03%C7%C7%EA%D9%1B%C2%0C%A5%C3%9E%94%B1%5CW%DD%B4%B5%2F%DC%1Fg%0FN%01%BB%25%8C%11%D5Y%FB%8Eo%A1%B2%17%9B%7D%07m%95%FEKvQ%CB%9A%BC%0F%1E%82%B2%D2%9B%99%0D%E4%21%98%40k%C8%24a%3C%28%86%8E%D5_%0D%0Bz%178%89%BC%02%20%CC%D1%A5S%A6%A5%B2%3B%DE%B0d%DF%AB%5B%C1%C6%FE%17%C7Y~%E5%DFC%86%EAjg%E7%F7%AD%14.%F9K%24%EC%D8E%26%A2%00C%F9JK%D2%83%D4%CE1%9C%20%0A%AC%E4g%237%24%B4%A2%09%D5%DE%86%FF%94%B9%7B%E5%85%FD%9Bq%8FN%B8%05%18%D4%11v%DB%BE%CE%BEQ%1C%F6%80%DF%EC%CAX%8B_
+1552512727.859975 INFO: [nfd.MulticastUdpTransport] [id=0,local=udp4://10.0.2.8:36726,remote=udp4://224.0.23.170:56363] Creating transport
+1552512727.859999 INFO: [nfd.FaceTable] Added face id=259 remote=udp4://224.0.23.170:56363 local=udp4://10.0.2.8:36726
+1552512727.863155 INFO: [nfd.MulticastUdpTransport] [id=0,local=udp4://172.18.0.8:60223,remote=udp4://224.0.23.170:56363] Creating transport
+1552512727.863175 INFO: [nfd.FaceTable] Added face id=260 remote=udp4://224.0.23.170:56363 local=udp4://172.18.0.8:60223
+1552512727.870353 DEBUG: [nfd.Forwarder] onIncomingData face=1 data=/localhost/nfd/faces/events/%FE%02
+1552512727.870371 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%02
+1552512727.870380 DEBUG: [nfd.Forwarder] onIncomingData matching=/localhost/nfd/faces/events
+1552512727.870406 DEBUG: [nfd.Forwarder] onOutgoingData face=258 data=/localhost/nfd/faces/events/%FE%02
+1552512727.870494 DEBUG: [nfd.Forwarder] onIncomingData face=1 data=/localhost/nfd/faces/events/%FE%03
+1552512727.870510 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%03
+1552512727.870519 DEBUG: [nfd.Forwarder] onIncomingData matching=/localhost/nfd/faces/events
+1552512727.870547 DEBUG: [nfd.Forwarder] onIncomingData face=1 data=/localhost/nfd/faces/events/%FE%04
+1552512727.870562 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%04
+1552512727.870571 DEBUG: [nfd.Forwarder] onIncomingData matching=/localhost/nfd/faces/events
+1552512727.870596 DEBUG: [nfd.Forwarder] onInterestFinalize interest=/localhost/nfd/faces/events satisfied
+1552512727.870638 DEBUG: [nfd.Forwarder] onIncomingData face=1 data=/localhost/nfd/fib/add-nexthop/h%1A%07%15%08%09localhost%08%03nfd%08%03ribi%01%00/%00%00%01ix%F8%3AX/%2B%E0%A4SG%C3%D6u/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00%7C%B1%C7a%C1%A9%3A%D8%C4%0B%5E%BC%20%A5%A9%20%90J%DE8%0B%FE%40%9A%EC%0F%F0%B3%F9%60%2C%A4I%85%A7d%A9f%F5%2F%D3%C7%8A%EC%A3%08%EC%E5%FE%8D%11%F9%80%1F%8B.%83j0~%3C%26%E6G%D0%86%B3fh%27%2F%23%92%7FK%9E%E0%3C%B4%9C%B6BYjF%BA%AA%F0%E7%F1%FE%CF%8A%CB%04%88%3C%02y%1E%8A%E2%D5%8E%EA%8A%8E%16%09%26O%213%22c%94%F2%29%E1%B3%D6%29%F9%E09%9E~n%230%D3%D0%B7%10%AA%24%A4%14%FA%5BL%B2%CB%3E%E5%C1%B5%3F%60%0C%3Fu%D8M%C4w%8A%2B%86O%8F%92%87%3D%C26%C6I%C7%8C7%A5M%11Wb%3E%CE%18%06e%D3pI%AEX%C20%95%D3%0F%EE%F0%0B%C8%20%B8%B8%91%BE%D9%05%00%D6%16%9A%3Eg%3B%F1%84%28%F4%15%5D%A9%0A%CF%7C%27%98%A3L%BD%17%95%E4%0A%CEQ%A0%B5%07%D5h%15%A4%28%B4%A8%98%F1C%1Bk%AC%FD-%94%27Ee%06%1D%AD%FA
+1552512727.870687 DEBUG: [nfd.ContentStore] insert /localhost/nfd/fib/add-nexthop/h%1A%07%15%08%09localhost%08%03nfd%08%03ribi%01%00/%00%00%01ix%F8%3AX/%2B%E0%A4SG%C3%D6u/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00%7C%B1%C7a%C1%A9%3A%D8%C4%0B%5E%BC%20%A5%A9%20%90J%DE8%0B%FE%40%9A%EC%0F%F0%B3%F9%60%2C%A4I%85%A7d%A9f%F5%2F%D3%C7%8A%EC%A3%08%EC%E5%FE%8D%11%F9%80%1F%8B.%83j0~%3C%26%E6G%D0%86%B3fh%27%2F%23%92%7FK%9E%E0%3C%B4%9C%B6BYjF%BA%AA%F0%E7%F1%FE%CF%8A%CB%04%88%3C%02y%1E%8A%E2%D5%8E%EA%8A%8E%16%09%26O%213%22c%94%F2%29%E1%B3%D6%29%F9%E09%9E~n%230%D3%D0%B7%10%AA%24%A4%14%FA%5BL%B2%CB%3E%E5%C1%B5%3F%60%0C%3Fu%D8M%C4w%8A%2B%86O%8F%92%87%3D%C26%C6I%C7%8C7%A5M%11Wb%3E%CE%18%06e%D3pI%AEX%C20%95%D3%0F%EE%F0%0B%C8%20%B8%B8%91%BE%D9%05%00%D6%16%9A%3Eg%3B%F1%84%28%F4%15%5D%A9%0A%CF%7C%27%98%A3L%BD%17%95%E4%0A%CEQ%A0%B5%07%D5h%15%A4%28%B4%A8%98%F1C%1Bk%AC%FD-%94%27Ee%06%1D%AD%FA
+1552512727.870739 DEBUG: [nfd.Forwarder] onIncomingData matching=/localhost/nfd/fib/add-nexthop/h%1A%07%15%08%09localhost%08%03nfd%08%03ribi%01%00/%00%00%01ix%F8%3AX/%2B%E0%A4SG%C3%D6u/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00%7C%B1%C7a%C1%A9%3A%D8%C4%0B%5E%BC%20%A5%A9%20%90J%DE8%0B%FE%40%9A%EC%0F%F0%B3%F9%60%2C%A4I%85%A7d%A9f%F5%2F%D3%C7%8A%EC%A3%08%EC%E5%FE%8D%11%F9%80%1F%8B.%83j0~%3C%26%E6G%D0%86%B3fh%27%2F%23%92%7FK%9E%E0%3C%B4%9C%B6BYjF%BA%AA%F0%E7%F1%FE%CF%8A%CB%04%88%3C%02y%1E%8A%E2%D5%8E%EA%8A%8E%16%09%26O%213%22c%94%F2%29%E1%B3%D6%29%F9%E09%9E~n%230%D3%D0%B7%10%AA%24%A4%14%FA%5BL%B2%CB%3E%E5%C1%B5%3F%60%0C%3Fu%D8M%C4w%8A%2B%86O%8F%92%87%3D%C26%C6I%C7%8C7%A5M%11Wb%3E%CE%18%06e%D3pI%AEX%C20%95%D3%0F%EE%F0%0B%C8%20%B8%B8%91%BE%D9%05%00%D6%16%9A%3Eg%3B%F1%84%28%F4%15%5D%A9%0A%CF%7C%27%98%A3L%BD%17%95%E4%0A%CEQ%A0%B5%07%D5h%15%A4%28%B4%A8%98%F1C%1Bk%AC%FD-%94%27Ee%06%1D%AD%FA
+1552512727.870797 DEBUG: [nfd.Forwarder] onOutgoingData face=258 data=/localhost/nfd/fib/add-nexthop/h%1A%07%15%08%09localhost%08%03nfd%08%03ribi%01%00/%00%00%01ix%F8%3AX/%2B%E0%A4SG%C3%D6u/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00%7C%B1%C7a%C1%A9%3A%D8%C4%0B%5E%BC%20%A5%A9%20%90J%DE8%0B%FE%40%9A%EC%0F%F0%B3%F9%60%2C%A4I%85%A7d%A9f%F5%2F%D3%C7%8A%EC%A3%08%EC%E5%FE%8D%11%F9%80%1F%8B.%83j0~%3C%26%E6G%D0%86%B3fh%27%2F%23%92%7FK%9E%E0%3C%B4%9C%B6BYjF%BA%AA%F0%E7%F1%FE%CF%8A%CB%04%88%3C%02y%1E%8A%E2%D5%8E%EA%8A%8E%16%09%26O%213%22c%94%F2%29%E1%B3%D6%29%F9%E09%9E~n%230%D3%D0%B7%10%AA%24%A4%14%FA%5BL%B2%CB%3E%E5%C1%B5%3F%60%0C%3Fu%D8M%C4w%8A%2B%86O%8F%92%87%3D%C26%C6I%C7%8C7%A5M%11Wb%3E%CE%18%06e%D3pI%AEX%C20%95%D3%0F%EE%F0%0B%C8%20%B8%B8%91%BE%D9%05%00%D6%16%9A%3Eg%3B%F1%84%28%F4%15%5D%A9%0A%CF%7C%27%98%A3L%BD%17%95%E4%0A%CEQ%A0%B5%07%D5h%15%A4%28%B4%A8%98%F1C%1Bk%AC%FD-%94%27Ee%06%1D%AD%FA
+1552512727.870878 DEBUG: [nfd.Forwarder] onIncomingData face=1 data=/localhost/nfd/faces/events/%FE%00
+1552512727.870896 DEBUG: [nfd.Forwarder] onDataUnsolicited face=1 data=/localhost/nfd/faces/events/%FE%00 decision=drop
+1552512727.870922 DEBUG: [nfd.Forwarder] onIncomingData face=1 data=/localhost/nfd/faces/update/h%06l%01%01p%01%01/%00%00%01ix%F8%3A%60/%C7%D7%92%1E%92%15%F93/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00T%1C%A1%83%C7y%7C%EEB%15%D7%1FKx%E1%C2L%9C%A3z9%8A%21%06%B2%1F%3AT%87%09w%F0%A2%15%DD%BD%5D%BD%05%BB%3F%00%5B2%C7%18%92%AB%BE%8D%AE%03%09%E5-o%94%C1s%1CG%FE%A0-%D1%B6%8D%9F%0C%BE9k%C5%0A%FE%A9%C4%CDD%03%C7%C7%EA%D9%1B%C2%0C%A5%C3%9E%94%B1%5CW%DD%B4%B5%2F%DC%1Fg%0FN%01%BB%25%8C%11%D5Y%FB%8Eo%A1%B2%17%9B%7D%07m%95%FEKvQ%CB%9A%BC%0F%1E%82%B2%D2%9B%99%0D%E4%21%98%40k%C8%24a%3C%28%86%8E%D5_%0D%0Bz%178%89%BC%02%20%CC%D1%A5S%A6%A5%B2%3B%DE%B0d%DF%AB%5B%C1%C6%FE%17%C7Y~%E5%DFC%86%EAjg%E7%F7%AD%14.%F9K%24%EC%D8E%26%A2%00C%F9JK%D2%83%D4%CE1%9C%20%0A%AC%E4g%237%24%B4%A2%09%D5%DE%86%FF%94%B9%7B%E5%85%FD%9Bq%8FN%B8%05%18%D4%11v%DB%BE%CE%BEQ%1C%F6%80%DF%EC%CAX%8B_
+1552512727.870967 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/update/h%06l%01%01p%01%01/%00%00%01ix%F8%3A%60/%C7%D7%92%1E%92%15%F93/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00T%1C%A1%83%C7y%7C%EEB%15%D7%1FKx%E1%C2L%9C%A3z9%8A%21%06%B2%1F%3AT%87%09w%F0%A2%15%DD%BD%5D%BD%05%BB%3F%00%5B2%C7%18%92%AB%BE%8D%AE%03%09%E5-o%94%C1s%1CG%FE%A0-%D1%B6%8D%9F%0C%BE9k%C5%0A%FE%A9%C4%CDD%03%C7%C7%EA%D9%1B%C2%0C%A5%C3%9E%94%B1%5CW%DD%B4%B5%2F%DC%1Fg%0FN%01%BB%25%8C%11%D5Y%FB%8Eo%A1%B2%17%9B%7D%07m%95%FEKvQ%CB%9A%BC%0F%1E%82%B2%D2%9B%99%0D%E4%21%98%40k%C8%24a%3C%28%86%8E%D5_%0D%0Bz%178%89%BC%02%20%CC%D1%A5S%A6%A5%B2%3B%DE%B0d%DF%AB%5B%C1%C6%FE%17%C7Y~%E5%DFC%86%EAjg%E7%F7%AD%14.%F9K%24%EC%D8E%26%A2%00C%F9JK%D2%83%D4%CE1%9C%20%0A%AC%E4g%237%24%B4%A2%09%D5%DE%86%FF%94%B9%7B%E5%85%FD%9Bq%8FN%B8%05%18%D4%11v%DB%BE%CE%BEQ%1C%F6%80%DF%EC%CAX%8B_
+1552512727.871008 DEBUG: [nfd.Forwarder] onIncomingData matching=/localhost/nfd/faces/update/h%06l%01%01p%01%01/%00%00%01ix%F8%3A%60/%C7%D7%92%1E%92%15%F93/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00T%1C%A1%83%C7y%7C%EEB%15%D7%1FKx%E1%C2L%9C%A3z9%8A%21%06%B2%1F%3AT%87%09w%F0%A2%15%DD%BD%5D%BD%05%BB%3F%00%5B2%C7%18%92%AB%BE%8D%AE%03%09%E5-o%94%C1s%1CG%FE%A0-%D1%B6%8D%9F%0C%BE9k%C5%0A%FE%A9%C4%CDD%03%C7%C7%EA%D9%1B%C2%0C%A5%C3%9E%94%B1%5CW%DD%B4%B5%2F%DC%1Fg%0FN%01%BB%25%8C%11%D5Y%FB%8Eo%A1%B2%17%9B%7D%07m%95%FEKvQ%CB%9A%BC%0F%1E%82%B2%D2%9B%99%0D%E4%21%98%40k%C8%24a%3C%28%86%8E%D5_%0D%0Bz%178%89%BC%02%20%CC%D1%A5S%A6%A5%B2%3B%DE%B0d%DF%AB%5B%C1%C6%FE%17%C7Y~%E5%DFC%86%EAjg%E7%F7%AD%14.%F9K%24%EC%D8E%26%A2%00C%F9JK%D2%83%D4%CE1%9C%20%0A%AC%E4g%237%24%B4%A2%09%D5%DE%86%FF%94%B9%7B%E5%85%FD%9Bq%8FN%B8%05%18%D4%11v%DB%BE%CE%BEQ%1C%F6%80%DF%EC%CAX%8B_
+1552512727.871066 DEBUG: [nfd.Forwarder] onOutgoingData face=258 data=/localhost/nfd/faces/update/h%06l%01%01p%01%01/%00%00%01ix%F8%3A%60/%C7%D7%92%1E%92%15%F93/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00T%1C%A1%83%C7y%7C%EEB%15%D7%1FKx%E1%C2L%9C%A3z9%8A%21%06%B2%1F%3AT%87%09w%F0%A2%15%DD%BD%5D%BD%05%BB%3F%00%5B2%C7%18%92%AB%BE%8D%AE%03%09%E5-o%94%C1s%1CG%FE%A0-%D1%B6%8D%9F%0C%BE9k%C5%0A%FE%A9%C4%CDD%03%C7%C7%EA%D9%1B%C2%0C%A5%C3%9E%94%B1%5CW%DD%B4%B5%2F%DC%1Fg%0FN%01%BB%25%8C%11%D5Y%FB%8Eo%A1%B2%17%9B%7D%07m%95%FEKvQ%CB%9A%BC%0F%1E%82%B2%D2%9B%99%0D%E4%21%98%40k%C8%24a%3C%28%86%8E%D5_%0D%0Bz%178%89%BC%02%20%CC%D1%A5S%A6%A5%B2%3B%DE%B0d%DF%AB%5B%C1%C6%FE%17%C7Y~%E5%DFC%86%EAjg%E7%F7%AD%14.%F9K%24%EC%D8E%26%A2%00C%F9JK%D2%83%D4%CE1%9C%20%0A%AC%E4g%237%24%B4%A2%09%D5%DE%86%FF%94%B9%7B%E5%85%FD%9Bq%8FN%B8%05%18%D4%11v%DB%BE%CE%BEQ%1C%F6%80%DF%EC%CAX%8B_
+1552512727.871228 DEBUG: [nfd.Forwarder] onIncomingInterest face=258 interest=/localhost/nfd/faces/events/%FE%03
+1552512727.871250 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE%03 L
+1552512727.871268 DEBUG: [nfd.ContentStore]   no-match
+1552512727.871274 DEBUG: [nfd.Forwarder] onContentStoreMiss interest=/localhost/nfd/faces/events/%FE%03
+1552512727.871283 DEBUG: [nfd.Forwarder] onOutgoingInterest face=1 interest=/localhost/nfd/faces/events/%FE%03
+1552512727.871343 DEBUG: [nfd.Forwarder] onInterestFinalize interest=/localhost/nfd/fib/add-nexthop/h%1A%07%15%08%09localhost%08%03nfd%08%03ribi%01%00/%00%00%01ix%F8%3AX/%2B%E0%A4SG%C3%D6u/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00%7C%B1%C7a%C1%A9%3A%D8%C4%0B%5E%BC%20%A5%A9%20%90J%DE8%0B%FE%40%9A%EC%0F%F0%B3%F9%60%2C%A4I%85%A7d%A9f%F5%2F%D3%C7%8A%EC%A3%08%EC%E5%FE%8D%11%F9%80%1F%8B.%83j0~%3C%26%E6G%D0%86%B3fh%27%2F%23%92%7FK%9E%E0%3C%B4%9C%B6BYjF%BA%AA%F0%E7%F1%FE%CF%8A%CB%04%88%3C%02y%1E%8A%E2%D5%8E%EA%8A%8E%16%09%26O%213%22c%94%F2%29%E1%B3%D6%29%F9%E09%9E~n%230%D3%D0%B7%10%AA%24%A4%14%FA%5BL%B2%CB%3E%E5%C1%B5%3F%60%0C%3Fu%D8M%C4w%8A%2B%86O%8F%92%87%3D%C26%C6I%C7%8C7%A5M%11Wb%3E%CE%18%06e%D3pI%AEX%C20%95%D3%0F%EE%F0%0B%C8%20%B8%B8%91%BE%D9%05%00%D6%16%9A%3Eg%3B%F1%84%28%F4%15%5D%A9%0A%CF%7C%27%98%A3L%BD%17%95%E4%0A%CEQ%A0%B5%07%D5h%15%A4%28%B4%A8%98%F1C%1Bk%AC%FD-%94%27Ee%06%1D%AD%FA satisfied
+1552512727.871390 DEBUG: [nfd.Forwarder] onInterestFinalize interest=/localhost/nfd/faces/update/h%06l%01%01p%01%01/%00%00%01ix%F8%3A%60/%C7%D7%92%1E%92%15%F93/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00T%1C%A1%83%C7y%7C%EEB%15%D7%1FKx%E1%C2L%9C%A3z9%8A%21%06%B2%1F%3AT%87%09w%F0%A2%15%DD%BD%5D%BD%05%BB%3F%00%5B2%C7%18%92%AB%BE%8D%AE%03%09%E5-o%94%C1s%1CG%FE%A0-%D1%B6%8D%9F%0C%BE9k%C5%0A%FE%A9%C4%CDD%03%C7%C7%EA%D9%1B%C2%0C%A5%C3%9E%94%B1%5CW%DD%B4%B5%2F%DC%1Fg%0FN%01%BB%25%8C%11%D5Y%FB%8Eo%A1%B2%17%9B%7D%07m%95%FEKvQ%CB%9A%BC%0F%1E%82%B2%D2%9B%99%0D%E4%21%98%40k%C8%24a%3C%28%86%8E%D5_%0D%0Bz%178%89%BC%02%20%CC%D1%A5S%A6%A5%B2%3B%DE%B0d%DF%AB%5B%C1%C6%FE%17%C7Y~%E5%DFC%86%EAjg%E7%F7%AD%14.%F9K%24%EC%D8E%26%A2%00C%F9JK%D2%83%D4%CE1%9C%20%0A%AC%E4g%237%24%B4%A2%09%D5%DE%86%FF%94%B9%7B%E5%85%FD%9Bq%8FN%B8%05%18%D4%11v%DB%BE%CE%BEQ%1C%F6%80%DF%EC%CAX%8B_ satisfied
+1552512727.871459 DEBUG: [nfd.Forwarder] onIncomingData face=1 data=/localhost/nfd/faces/events/%FE%03
+1552512727.871475 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%03
+1552512727.871485 DEBUG: [nfd.Forwarder] onIncomingData matching=/localhost/nfd/faces/events/%FE%03
+1552512727.871506 DEBUG: [nfd.Forwarder] onOutgoingData face=258 data=/localhost/nfd/faces/events/%FE%03
+1552512727.871550 DEBUG: [nfd.Forwarder] onInterestFinalize interest=/localhost/nfd/faces/events/%FE%03 satisfied
+1552512727.871663 DEBUG: [nfd.Forwarder] onIncomingInterest face=258 interest=/localhost/nfd/faces/events/%FE%04
+1552512727.871697 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE%04 L
+1552512727.871724 DEBUG: [nfd.ContentStore]   no-match
+1552512727.871737 DEBUG: [nfd.Forwarder] onContentStoreMiss interest=/localhost/nfd/faces/events/%FE%04
+1552512727.871756 DEBUG: [nfd.Forwarder] onOutgoingInterest face=1 interest=/localhost/nfd/faces/events/%FE%04
+1552512727.871833 DEBUG: [nfd.Forwarder] onIncomingData face=1 data=/localhost/nfd/faces/events/%FE%04
+1552512727.871852 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%04
+1552512727.871860 DEBUG: [nfd.Forwarder] onIncomingData matching=/localhost/nfd/faces/events/%FE%04
+1552512727.871888 DEBUG: [nfd.Forwarder] onOutgoingData face=258 data=/localhost/nfd/faces/events/%FE%04
+1552512727.871951 DEBUG: [nfd.Forwarder] onInterestFinalize interest=/localhost/nfd/faces/events/%FE%04 satisfied
+1552512727.872046 DEBUG: [nfd.Forwarder] onIncomingInterest face=258 interest=/localhost/nfd/faces/events/%FE%05
+1552512727.872080 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE%05 L
+1552512727.872108 DEBUG: [nfd.ContentStore]   no-match
+1552512727.872122 DEBUG: [nfd.Forwarder] onContentStoreMiss interest=/localhost/nfd/faces/events/%FE%05
+1552512727.872145 DEBUG: [nfd.Forwarder] onOutgoingInterest face=1 interest=/localhost/nfd/faces/events/%FE%05
+1552512773.918705 INFO: [nfd.UnixStreamTransport] [id=0,local=unix:///run/nfd.sock,remote=fd://35] Creating transport
+1552512773.918738 INFO: [nfd.FaceTable] Added face id=261 remote=fd://35 local=unix:///run/nfd.sock
+1552512773.922849 DEBUG: [nfd.Forwarder] onIncomingInterest face=261 interest=/localhost/nfd/status/general
+1552512773.922885 DEBUG: [nfd.ContentStore] find /localhost/nfd/status/general L
+1552512773.922902 DEBUG: [nfd.ContentStore]   no-match
+1552512773.922907 DEBUG: [nfd.Forwarder] onContentStoreMiss interest=/localhost/nfd/status/general
+1552512773.922922 DEBUG: [nfd.Forwarder] onOutgoingInterest face=1 interest=/localhost/nfd/status/general
+1552512773.926209 DEBUG: [nfd.Forwarder] onIncomingData face=1 data=/localhost/nfd/faces/events/%FE%05
+1552512773.926234 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%05
+1552512773.926242 DEBUG: [nfd.Forwarder] onIncomingData matching=/localhost/nfd/faces/events/%FE%05
+1552512773.926268 DEBUG: [nfd.Forwarder] onOutgoingData face=258 data=/localhost/nfd/faces/events/%FE%05
+1552512773.926329 DEBUG: [nfd.Forwarder] onInterestFinalize interest=/localhost/nfd/faces/events/%FE%05 satisfied
+1552512773.926379 DEBUG: [nfd.Forwarder] onIncomingData face=1 data=/localhost/nfd/status/general/%FD%00%00%01ix%F8%EF%23/%00%00
+1552512773.926401 DEBUG: [nfd.ContentStore] insert /localhost/nfd/status/general/%FD%00%00%01ix%F8%EF%23/%00%00
+1552512773.926412 DEBUG: [nfd.Forwarder] onIncomingData matching=/localhost/nfd/status/general
+1552512773.926435 DEBUG: [nfd.Forwarder] onOutgoingData face=261 data=/localhost/nfd/status/general/%FD%00%00%01ix%F8%EF%23/%00%00
+1552512773.926482 DEBUG: [nfd.Forwarder] onInterestFinalize interest=/localhost/nfd/status/general satisfied
+1552512773.926598 DEBUG: [nfd.Forwarder] onIncomingInterest face=258 interest=/localhost/nfd/faces/events/%FE%06
+1552512773.926638 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE%06 L
+1552512773.926660 DEBUG: [nfd.ContentStore]   no-match
+1552512773.926675 DEBUG: [nfd.Forwarder] onContentStoreMiss interest=/localhost/nfd/faces/events/%FE%06
+1552512773.926696 DEBUG: [nfd.Forwarder] onOutgoingInterest face=1 interest=/localhost/nfd/faces/events/%FE%06
+1552512773.927205 INFO: [nfd.Transport] [id=261,local=unix:///run/nfd.sock,remote=fd://35] setState UP -> CLOSING
+1552512773.927253 INFO: [nfd.Transport] [id=261,local=unix:///run/nfd.sock,remote=fd://35] setState CLOSING -> CLOSED
+1552512773.930414 INFO: [nfd.FaceTable] Removed face id=261 remote=fd://35 local=unix:///run/nfd.sock
+1552512773.930477 DEBUG: [nfd.Forwarder] onIncomingData face=1 data=/localhost/nfd/faces/events/%FE%06
+1552512773.930497 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%06
+1552512773.930509 DEBUG: [nfd.Forwarder] onIncomingData matching=/localhost/nfd/faces/events/%FE%06
+1552512773.930536 DEBUG: [nfd.Forwarder] onOutgoingData face=258 data=/localhost/nfd/faces/events/%FE%06
+1552512773.930589 DEBUG: [nfd.Forwarder] onInterestFinalize interest=/localhost/nfd/faces/events/%FE%06 satisfied
+1552512773.930716 DEBUG: [nfd.Forwarder] onIncomingInterest face=258 interest=/localhost/nfd/faces/events/%FE%07
+1552512773.930745 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE%07 L
+1552512773.930765 DEBUG: [nfd.ContentStore]   no-match
+1552512773.930773 DEBUG: [nfd.Forwarder] onContentStoreMiss interest=/localhost/nfd/faces/events/%FE%07
+1552512773.930788 DEBUG: [nfd.Forwarder] onOutgoingInterest face=1 interest=/localhost/nfd/faces/events/%FE%07
+1552512785.988767 INFO: [nfd.UnixStreamTransport] [id=0,local=unix:///run/nfd.sock,remote=fd://35] Creating transport
+1552512785.988801 INFO: [nfd.FaceTable] Added face id=262 remote=fd://35 local=unix:///run/nfd.sock
+1552512785.992769 DEBUG: [nfd.Forwarder] onIncomingData face=1 data=/localhost/nfd/faces/events/%FE%07
+1552512785.992804 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%07
+1552512785.992821 DEBUG: [nfd.Forwarder] onIncomingData matching=/localhost/nfd/faces/events/%FE%07
+1552512785.992868 DEBUG: [nfd.Forwarder] onOutgoingData face=258 data=/localhost/nfd/faces/events/%FE%07
+1552512785.992934 DEBUG: [nfd.Forwarder] onInterestFinalize interest=/localhost/nfd/faces/events/%FE%07 satisfied
+1552512785.993127 DEBUG: [nfd.Forwarder] onIncomingInterest face=258 interest=/localhost/nfd/faces/events/%FE%08
+1552512785.993175 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE%08 L
+1552512785.993210 DEBUG: [nfd.ContentStore]   no-match
+1552512785.993229 DEBUG: [nfd.Forwarder] onContentStoreMiss interest=/localhost/nfd/faces/events/%FE%08
+1552512785.993255 DEBUG: [nfd.Forwarder] onOutgoingInterest face=1 interest=/localhost/nfd/faces/events/%FE%08
+1552512785.997394 DEBUG: [nfd.Forwarder] onIncomingInterest face=262 interest=/localhost/nfd/faces/create/h%1Ar%15udp4%3A%2F%2F10.0.2.13%3A6363%85%01%00/%00%00%01ix%F9%1EE/%C3S%9F%DDoeh%93/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00%89%D5D9z%8C%E2%D8%E4%E0%F9%87V%F4%C7~%D0d%E9%80I%83%8Ba%F41%85%DEf0%8A%9B%AA3v%E9%3A%E4%082%DC%22%8A%C4%1A%86%A2G~%D2%AEt%E7%10Y%DF%27%A0%9F%05%94D%C2S%17%1C%AB%1A%3E%E6%D0%C3%08r%15Xn%A93%F7k7%E9TA%A1%9C%DA%2B%A9Xo%C2%A5%0A%0B%C6u%BD%D1%EE%A0%89%FD%A7%D7z%B9WB%C1%86%B2%CC%1A%EC%7C%CF%B1%B9%F9%E3%AB%13q0%96H%7F-%83D6%7BzM%2C%F3%0CH%BC%05%E0p%CFY%3AUU%A8%89%D6%B3S%87%90%E1d%D2%A2%3D%0D%25%D4%A5%F7%F6os%40%3F2r%08%1D%82IQ%A48%F7%FB%9D%01%9Em%97W-46%96ep%FB%82%A2%90adLF%C4Zb%5C%CD%AE%F3%0D%BB%8F%A0%C5%08J%03%AE%C0sg%E7K%1Dk%A7%85%0C%18%BA%F6%A9%19%F1%3Di%EB%F7%A7%9A%FF%A7%8D%A1%F6ky%3A%22J%3C%15%A9%85y%D7
+1552512785.997474 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/create/h%1Ar%15udp4%3A%2F%2F10.0.2.13%3A6363%85%01%00/%00%00%01ix%F9%1EE/%C3S%9F%DDoeh%93/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00%89%D5D9z%8C%E2%D8%E4%E0%F9%87V%F4%C7~%D0d%E9%80I%83%8Ba%F41%85%DEf0%8A%9B%AA3v%E9%3A%E4%082%DC%22%8A%C4%1A%86%A2G~%D2%AEt%E7%10Y%DF%27%A0%9F%05%94D%C2S%17%1C%AB%1A%3E%E6%D0%C3%08r%15Xn%A93%F7k7%E9TA%A1%9C%DA%2B%A9Xo%C2%A5%0A%0B%C6u%BD%D1%EE%A0%89%FD%A7%D7z%B9WB%C1%86%B2%CC%1A%EC%7C%CF%B1%B9%F9%E3%AB%13q0%96H%7F-%83D6%7BzM%2C%F3%0CH%BC%05%E0p%CFY%3AUU%A8%89%D6%B3S%87%90%E1d%D2%A2%3D%0D%25%D4%A5%F7%F6os%40%3F2r%08%1D%82IQ%A48%F7%FB%9D%01%9Em%97W-46%96ep%FB%82%A2%90adLF%C4Zb%5C%CD%AE%F3%0D%BB%8F%A0%C5%08J%03%AE%C0sg%E7K%1Dk%A7%85%0C%18%BA%F6%A9%19%F1%3Di%EB%F7%A7%9A%FF%A7%8D%A1%F6ky%3A%22J%3C%15%A9%85y%D7 L
+1552512785.997535 DEBUG: [nfd.ContentStore]   no-match
+1552512785.997543 DEBUG: [nfd.Forwarder] onContentStoreMiss interest=/localhost/nfd/faces/create/h%1Ar%15udp4%3A%2F%2F10.0.2.13%3A6363%85%01%00/%00%00%01ix%F9%1EE/%C3S%9F%DDoeh%93/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00%89%D5D9z%8C%E2%D8%E4%E0%F9%87V%F4%C7~%D0d%E9%80I%83%8Ba%F41%85%DEf0%8A%9B%AA3v%E9%3A%E4%082%DC%22%8A%C4%1A%86%A2G~%D2%AEt%E7%10Y%DF%27%A0%9F%05%94D%C2S%17%1C%AB%1A%3E%E6%D0%C3%08r%15Xn%A93%F7k7%E9TA%A1%9C%DA%2B%A9Xo%C2%A5%0A%0B%C6u%BD%D1%EE%A0%89%FD%A7%D7z%B9WB%C1%86%B2%CC%1A%EC%7C%CF%B1%B9%F9%E3%AB%13q0%96H%7F-%83D6%7BzM%2C%F3%0CH%BC%05%E0p%CFY%3AUU%A8%89%D6%B3S%87%90%E1d%D2%A2%3D%0D%25%D4%A5%F7%F6os%40%3F2r%08%1D%82IQ%A48%F7%FB%9D%01%9Em%97W-46%96ep%FB%82%A2%90adLF%C4Zb%5C%CD%AE%F3%0D%BB%8F%A0%C5%08J%03%AE%C0sg%E7K%1Dk%A7%85%0C%18%BA%F6%A9%19%F1%3Di%EB%F7%A7%9A%FF%A7%8D%A1%F6ky%3A%22J%3C%15%A9%85y%D7
+1552512785.997603 DEBUG: [nfd.Forwarder] onOutgoingInterest face=1 interest=/localhost/nfd/faces/create/h%1Ar%15udp4%3A%2F%2F10.0.2.13%3A6363%85%01%00/%00%00%01ix%F9%1EE/%C3S%9F%DDoeh%93/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00%89%D5D9z%8C%E2%D8%E4%E0%F9%87V%F4%C7~%D0d%E9%80I%83%8Ba%F41%85%DEf0%8A%9B%AA3v%E9%3A%E4%082%DC%22%8A%C4%1A%86%A2G~%D2%AEt%E7%10Y%DF%27%A0%9F%05%94D%C2S%17%1C%AB%1A%3E%E6%D0%C3%08r%15Xn%A93%F7k7%E9TA%A1%9C%DA%2B%A9Xo%C2%A5%0A%0B%C6u%BD%D1%EE%A0%89%FD%A7%D7z%B9WB%C1%86%B2%CC%1A%EC%7C%CF%B1%B9%F9%E3%AB%13q0%96H%7F-%83D6%7BzM%2C%F3%0CH%BC%05%E0p%CFY%3AUU%A8%89%D6%B3S%87%90%E1d%D2%A2%3D%0D%25%D4%A5%F7%F6os%40%3F2r%08%1D%82IQ%A48%F7%FB%9D%01%9Em%97W-46%96ep%FB%82%A2%90adLF%C4Zb%5C%CD%AE%F3%0D%BB%8F%A0%C5%08J%03%AE%C0sg%E7K%1Dk%A7%85%0C%18%BA%F6%A9%19%F1%3Di%EB%F7%A7%9A%FF%A7%8D%A1%F6ky%3A%22J%3C%15%A9%85y%D7
+1552512785.997894 INFO: [nfd.UnicastUdpTransport] [id=0,local=udp4://10.0.2.8:6363,remote=udp4://10.0.2.13:6363] Creating transport
+1552512785.997932 INFO: [nfd.FaceTable] Added face id=263 remote=udp4://10.0.2.13:6363 local=udp4://10.0.2.8:6363
+1552512786.003454 DEBUG: [nfd.Forwarder] onIncomingData face=1 data=/localhost/nfd/faces/events/%FE%08
+1552512786.003476 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%08
+1552512786.003483 DEBUG: [nfd.Forwarder] onIncomingData matching=/localhost/nfd/faces/events/%FE%08
+1552512786.003504 DEBUG: [nfd.Forwarder] onOutgoingData face=258 data=/localhost/nfd/faces/events/%FE%08
+1552512786.003546 DEBUG: [nfd.Forwarder] onIncomingData face=1 data=/localhost/nfd/faces/create/h%1Ar%15udp4%3A%2F%2F10.0.2.13%3A6363%85%01%00/%00%00%01ix%F9%1EE/%C3S%9F%DDoeh%93/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00%89%D5D9z%8C%E2%D8%E4%E0%F9%87V%F4%C7~%D0d%E9%80I%83%8Ba%F41%85%DEf0%8A%9B%AA3v%E9%3A%E4%082%DC%22%8A%C4%1A%86%A2G~%D2%AEt%E7%10Y%DF%27%A0%9F%05%94D%C2S%17%1C%AB%1A%3E%E6%D0%C3%08r%15Xn%A93%F7k7%E9TA%A1%9C%DA%2B%A9Xo%C2%A5%0A%0B%C6u%BD%D1%EE%A0%89%FD%A7%D7z%B9WB%C1%86%B2%CC%1A%EC%7C%CF%B1%B9%F9%E3%AB%13q0%96H%7F-%83D6%7BzM%2C%F3%0CH%BC%05%E0p%CFY%3AUU%A8%89%D6%B3S%87%90%E1d%D2%A2%3D%0D%25%D4%A5%F7%F6os%40%3F2r%08%1D%82IQ%A48%F7%FB%9D%01%9Em%97W-46%96ep%FB%82%A2%90adLF%C4Zb%5C%CD%AE%F3%0D%BB%8F%A0%C5%08J%03%AE%C0sg%E7K%1Dk%A7%85%0C%18%BA%F6%A9%19%F1%3Di%EB%F7%A7%9A%FF%A7%8D%A1%F6ky%3A%22J%3C%15%A9%85y%D7
+1552512786.003616 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/create/h%1Ar%15udp4%3A%2F%2F10.0.2.13%3A6363%85%01%00/%00%00%01ix%F9%1EE/%C3S%9F%DDoeh%93/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00%89%D5D9z%8C%E2%D8%E4%E0%F9%87V%F4%C7~%D0d%E9%80I%83%8Ba%F41%85%DEf0%8A%9B%AA3v%E9%3A%E4%082%DC%22%8A%C4%1A%86%A2G~%D2%AEt%E7%10Y%DF%27%A0%9F%05%94D%C2S%17%1C%AB%1A%3E%E6%D0%C3%08r%15Xn%A93%F7k7%E9TA%A1%9C%DA%2B%A9Xo%C2%A5%0A%0B%C6u%BD%D1%EE%A0%89%FD%A7%D7z%B9WB%C1%86%B2%CC%1A%EC%7C%CF%B1%B9%F9%E3%AB%13q0%96H%7F-%83D6%7BzM%2C%F3%0CH%BC%05%E0p%CFY%3AUU%A8%89%D6%B3S%87%90%E1d%D2%A2%3D%0D%25%D4%A5%F7%F6os%40%3F2r%08%1D%82IQ%A48%F7%FB%9D%01%9Em%97W-46%96ep%FB%82%A2%90adLF%C4Zb%5C%CD%AE%F3%0D%BB%8F%A0%C5%08J%03%AE%C0sg%E7K%1Dk%A7%85%0C%18%BA%F6%A9%19%F1%3Di%EB%F7%A7%9A%FF%A7%8D%A1%F6ky%3A%22J%3C%15%A9%85y%D7
+1552512786.003670 DEBUG: [nfd.Forwarder] onIncomingData matching=/localhost/nfd/faces/create/h%1Ar%15udp4%3A%2F%2F10.0.2.13%3A6363%85%01%00/%00%00%01ix%F9%1EE/%C3S%9F%DDoeh%93/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00%89%D5D9z%8C%E2%D8%E4%E0%F9%87V%F4%C7~%D0d%E9%80I%83%8Ba%F41%85%DEf0%8A%9B%AA3v%E9%3A%E4%082%DC%22%8A%C4%1A%86%A2G~%D2%AEt%E7%10Y%DF%27%A0%9F%05%94D%C2S%17%1C%AB%1A%3E%E6%D0%C3%08r%15Xn%A93%F7k7%E9TA%A1%9C%DA%2B%A9Xo%C2%A5%0A%0B%C6u%BD%D1%EE%A0%89%FD%A7%D7z%B9WB%C1%86%B2%CC%1A%EC%7C%CF%B1%B9%F9%E3%AB%13q0%96H%7F-%83D6%7BzM%2C%F3%0CH%BC%05%E0p%CFY%3AUU%A8%89%D6%B3S%87%90%E1d%D2%A2%3D%0D%25%D4%A5%F7%F6os%40%3F2r%08%1D%82IQ%A48%F7%FB%9D%01%9Em%97W-46%96ep%FB%82%A2%90adLF%C4Zb%5C%CD%AE%F3%0D%BB%8F%A0%C5%08J%03%AE%C0sg%E7K%1Dk%A7%85%0C%18%BA%F6%A9%19%F1%3Di%EB%F7%A7%9A%FF%A7%8D%A1%F6ky%3A%22J%3C%15%A9%85y%D7
+1552512786.003727 DEBUG: [nfd.Forwarder] onOutgoingData face=262 data=/localhost/nfd/faces/create/h%1Ar%15udp4%3A%2F%2F10.0.2.13%3A6363%85%01%00/%00%00%01ix%F9%1EE/%C3S%9F%DDoeh%93/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00%89%D5D9z%8C%E2%D8%E4%E0%F9%87V%F4%C7~%D0d%E9%80I%83%8Ba%F41%85%DEf0%8A%9B%AA3v%E9%3A%E4%082%DC%22%8A%C4%1A%86%A2G~%D2%AEt%E7%10Y%DF%27%A0%9F%05%94D%C2S%17%1C%AB%1A%3E%E6%D0%C3%08r%15Xn%A93%F7k7%E9TA%A1%9C%DA%2B%A9Xo%C2%A5%0A%0B%C6u%BD%D1%EE%A0%89%FD%A7%D7z%B9WB%C1%86%B2%CC%1A%EC%7C%CF%B1%B9%F9%E3%AB%13q0%96H%7F-%83D6%7BzM%2C%F3%0CH%BC%05%E0p%CFY%3AUU%A8%89%D6%B3S%87%90%E1d%D2%A2%3D%0D%25%D4%A5%F7%F6os%40%3F2r%08%1D%82IQ%A48%F7%FB%9D%01%9Em%97W-46%96ep%FB%82%A2%90adLF%C4Zb%5C%CD%AE%F3%0D%BB%8F%A0%C5%08J%03%AE%C0sg%E7K%1Dk%A7%85%0C%18%BA%F6%A9%19%F1%3Di%EB%F7%A7%9A%FF%A7%8D%A1%F6ky%3A%22J%3C%15%A9%85y%D7
+1552512786.003843 DEBUG: [nfd.Forwarder] onIncomingInterest face=258 interest=/localhost/nfd/faces/events/%FE%09
+1552512786.003872 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE%09 L
+1552512786.003889 DEBUG: [nfd.ContentStore]   no-match
+1552512786.003895 DEBUG: [nfd.Forwarder] onContentStoreMiss interest=/localhost/nfd/faces/events/%FE%09
+1552512786.003913 DEBUG: [nfd.Forwarder] onOutgoingInterest face=1 interest=/localhost/nfd/faces/events/%FE%09
+1552512786.003942 DEBUG: [nfd.Forwarder] onInterestFinalize interest=/localhost/nfd/faces/events/%FE%08 satisfied
+1552512786.003958 DEBUG: [nfd.Forwarder] onInterestFinalize interest=/localhost/nfd/faces/create/h%1Ar%15udp4%3A%2F%2F10.0.2.13%3A6363%85%01%00/%00%00%01ix%F9%1EE/%C3S%9F%DDoeh%93/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00%89%D5D9z%8C%E2%D8%E4%E0%F9%87V%F4%C7~%D0d%E9%80I%83%8Ba%F41%85%DEf0%8A%9B%AA3v%E9%3A%E4%082%DC%22%8A%C4%1A%86%A2G~%D2%AEt%E7%10Y%DF%27%A0%9F%05%94D%C2S%17%1C%AB%1A%3E%E6%D0%C3%08r%15Xn%A93%F7k7%E9TA%A1%9C%DA%2B%A9Xo%C2%A5%0A%0B%C6u%BD%D1%EE%A0%89%FD%A7%D7z%B9WB%C1%86%B2%CC%1A%EC%7C%CF%B1%B9%F9%E3%AB%13q0%96H%7F-%83D6%7BzM%2C%F3%0CH%BC%05%E0p%CFY%3AUU%A8%89%D6%B3S%87%90%E1d%D2%A2%3D%0D%25%D4%A5%F7%F6os%40%3F2r%08%1D%82IQ%A48%F7%FB%9D%01%9Em%97W-46%96ep%FB%82%A2%90adLF%C4Zb%5C%CD%AE%F3%0D%BB%8F%A0%C5%08J%03%AE%C0sg%E7K%1Dk%A7%85%0C%18%BA%F6%A9%19%F1%3Di%EB%F7%A7%9A%FF%A7%8D%A1%F6ky%3A%22J%3C%15%A9%85y%D7 satisfied
+1552512786.004184 INFO: [nfd.Transport] [id=262,local=unix:///run/nfd.sock,remote=fd://35] setState UP -> CLOSING
+1552512786.004233 INFO: [nfd.Transport] [id=262,local=unix:///run/nfd.sock,remote=fd://35] setState CLOSING -> CLOSED
+1552512786.006987 INFO: [nfd.FaceTable] Removed face id=262 remote=fd://35 local=unix:///run/nfd.sock
+1552512786.007052 DEBUG: [nfd.Forwarder] onIncomingData face=1 data=/localhost/nfd/faces/events/%FE%09
+1552512786.007086 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%09
+1552512786.007104 DEBUG: [nfd.Forwarder] onIncomingData matching=/localhost/nfd/faces/events/%FE%09
+1552512786.007141 DEBUG: [nfd.Forwarder] onOutgoingData face=258 data=/localhost/nfd/faces/events/%FE%09
+1552512786.007198 DEBUG: [nfd.Forwarder] onInterestFinalize interest=/localhost/nfd/faces/events/%FE%09 satisfied
+1552512786.007334 DEBUG: [nfd.Forwarder] onIncomingInterest face=258 interest=/localhost/nfd/faces/events/%FE%0A
+1552512786.007367 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE%0A L
+1552512786.007391 DEBUG: [nfd.ContentStore]   no-match
+1552512786.007402 DEBUG: [nfd.Forwarder] onContentStoreMiss interest=/localhost/nfd/faces/events/%FE%0A
+1552512786.007417 DEBUG: [nfd.Forwarder] onOutgoingInterest face=1 interest=/localhost/nfd/faces/events/%FE%0A
+1552512795.887237 INFO: [nfd.UnixStreamTransport] [id=0,local=unix:///run/nfd.sock,remote=fd://35] Creating transport
+1552512795.887263 INFO: [nfd.FaceTable] Added face id=264 remote=fd://35 local=unix:///run/nfd.sock
+1552512795.890306 DEBUG: [nfd.Forwarder] onIncomingInterest face=264 interest=/localhost/nfd/faces/query/%96%04i%02%01%07
+1552512795.890340 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/query/%96%04i%02%01%07 L
+1552512795.890366 DEBUG: [nfd.ContentStore]   no-match
+1552512795.890379 DEBUG: [nfd.Forwarder] onContentStoreMiss interest=/localhost/nfd/faces/query/%96%04i%02%01%07
+1552512795.890399 DEBUG: [nfd.Forwarder] onOutgoingInterest face=1 interest=/localhost/nfd/faces/query/%96%04i%02%01%07
+1552512795.890450 DEBUG: [nfd.Forwarder] onIncomingData face=1 data=/localhost/nfd/faces/events/%FE%0A
+1552512795.890473 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%0A
+1552512795.890486 DEBUG: [nfd.Forwarder] onIncomingData matching=/localhost/nfd/faces/events/%FE%0A
+1552512795.890533 DEBUG: [nfd.Forwarder] onOutgoingData face=258 data=/localhost/nfd/faces/events/%FE%0A
+1552512795.893499 DEBUG: [nfd.Forwarder] onIncomingInterest face=258 interest=/localhost/nfd/faces/events/%FE%0B
+1552512795.893526 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE%0B L
+1552512795.893547 DEBUG: [nfd.ContentStore]   no-match
+1552512795.893558 DEBUG: [nfd.Forwarder] onContentStoreMiss interest=/localhost/nfd/faces/events/%FE%0B
+1552512795.893577 DEBUG: [nfd.Forwarder] onOutgoingInterest face=1 interest=/localhost/nfd/faces/events/%FE%0B
+1552512795.893609 DEBUG: [nfd.Forwarder] onInterestFinalize interest=/localhost/nfd/faces/events/%FE%0A satisfied
+1552512795.893654 DEBUG: [nfd.Forwarder] onIncomingData face=1 data=/localhost/nfd/faces/query/%96%04i%02%01%07/%FD%00%00%01ix%F9D%F2/%00%00
+1552512795.893675 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/query/%96%04i%02%01%07/%FD%00%00%01ix%F9D%F2/%00%00
+1552512795.893693 DEBUG: [nfd.Forwarder] onIncomingData matching=/localhost/nfd/faces/query/%96%04i%02%01%07
+1552512795.893722 DEBUG: [nfd.Forwarder] onOutgoingData face=264 data=/localhost/nfd/faces/query/%96%04i%02%01%07/%FD%00%00%01ix%F9D%F2/%00%00
+1552512795.893799 DEBUG: [nfd.Forwarder] onInterestFinalize interest=/localhost/nfd/faces/query/%96%04i%02%01%07 satisfied
+1552512795.900500 DEBUG: [nfd.Forwarder] onIncomingInterest face=264 interest=/localhost/nfd/rib/register/h%15%07%06%08%04testi%02%01%07o%01%FFj%01%00l%01%01/%00%00%01ix%F9D%F6/%BBB%E3%5B%A70L%B3/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%002%F5%F0%8D9u%E1%FBt%02o%D6%DD%2F.%89%90%80%E3x%7D%7C%89%0F%0B%D2k%C2%AD%B3%26%E1%F0L%7CO%15%D9%5D%60%05%ED%C0%CAH%14k%3D%D5d%F0J%DED%A3%9D%3D%0C%E1%7B%DF%BB%C3%7C%DD%86%16%09%B0%DC%A9b%90.%A0%3A%C8%E9%F5%1D%86%86h%40%81%8D%2B%DFk%EC%86%90Ck~%20%3A%03b%A0%DF~%B9%21%BF%F8%91%BD%8F%CC%83%B7%AC%09%14%1E%DC9%2C%92%CA%C0%FD%B55%EA%B7%CE%FC%A4%9E%3A%F0%E8r%7F%B3%9C%60%E7%0A%14%C6%CB%AD%B4%80%E2%0E%9E%3C%2FR%AA%99%18%DB%F8%FD%1D%E8Z%21%D44%C9%3E%F8%17%A9%F2%91yr%117%9A%22%A2%D8h%E0%8F%F9%BC%EEr%BB%E7U.A%A8t%7BS%1Dm%CCX%FC%EC%20%FD%85%F2%BE%C6A%D8%27l%C4T%A8%95%27%07%3F%8D1%DA%C7%B9%F5D%9C%17%3B%1D%06%C1%B4x%14%26%A0%C3%25%04%CEE%405%D7%8E%3C%25%87%7C%B0%12%C6T%7C%AA
+1552512795.900583 DEBUG: [nfd.ContentStore] find /localhost/nfd/rib/register/h%15%07%06%08%04testi%02%01%07o%01%FFj%01%00l%01%01/%00%00%01ix%F9D%F6/%BBB%E3%5B%A70L%B3/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%002%F5%F0%8D9u%E1%FBt%02o%D6%DD%2F.%89%90%80%E3x%7D%7C%89%0F%0B%D2k%C2%AD%B3%26%E1%F0L%7CO%15%D9%5D%60%05%ED%C0%CAH%14k%3D%D5d%F0J%DED%A3%9D%3D%0C%E1%7B%DF%BB%C3%7C%DD%86%16%09%B0%DC%A9b%90.%A0%3A%C8%E9%F5%1D%86%86h%40%81%8D%2B%DFk%EC%86%90Ck~%20%3A%03b%A0%DF~%B9%21%BF%F8%91%BD%8F%CC%83%B7%AC%09%14%1E%DC9%2C%92%CA%C0%FD%B55%EA%B7%CE%FC%A4%9E%3A%F0%E8r%7F%B3%9C%60%E7%0A%14%C6%CB%AD%B4%80%E2%0E%9E%3C%2FR%AA%99%18%DB%F8%FD%1D%E8Z%21%D44%C9%3E%F8%17%A9%F2%91yr%117%9A%22%A2%D8h%E0%8F%F9%BC%EEr%BB%E7U.A%A8t%7BS%1Dm%CCX%FC%EC%20%FD%85%F2%BE%C6A%D8%27l%C4T%A8%95%27%07%3F%8D1%DA%C7%B9%F5D%9C%17%3B%1D%06%C1%B4x%14%26%A0%C3%25%04%CEE%405%D7%8E%3C%25%87%7C%B0%12%C6T%7C%AA L
+1552512795.900662 DEBUG: [nfd.ContentStore]   no-match
+1552512795.900675 DEBUG: [nfd.Forwarder] onContentStoreMiss interest=/localhost/nfd/rib/register/h%15%07%06%08%04testi%02%01%07o%01%FFj%01%00l%01%01/%00%00%01ix%F9D%F6/%BBB%E3%5B%A70L%B3/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%002%F5%F0%8D9u%E1%FBt%02o%D6%DD%2F.%89%90%80%E3x%7D%7C%89%0F%0B%D2k%C2%AD%B3%26%E1%F0L%7CO%15%D9%5D%60%05%ED%C0%CAH%14k%3D%D5d%F0J%DED%A3%9D%3D%0C%E1%7B%DF%BB%C3%7C%DD%86%16%09%B0%DC%A9b%90.%A0%3A%C8%E9%F5%1D%86%86h%40%81%8D%2B%DFk%EC%86%90Ck~%20%3A%03b%A0%DF~%B9%21%BF%F8%91%BD%8F%CC%83%B7%AC%09%14%1E%DC9%2C%92%CA%C0%FD%B55%EA%B7%CE%FC%A4%9E%3A%F0%E8r%7F%B3%9C%60%E7%0A%14%C6%CB%AD%B4%80%E2%0E%9E%3C%2FR%AA%99%18%DB%F8%FD%1D%E8Z%21%D44%C9%3E%F8%17%A9%F2%91yr%117%9A%22%A2%D8h%E0%8F%F9%BC%EEr%BB%E7U.A%A8t%7BS%1Dm%CCX%FC%EC%20%FD%85%F2%BE%C6A%D8%27l%C4T%A8%95%27%07%3F%8D1%DA%C7%B9%F5D%9C%17%3B%1D%06%C1%B4x%14%26%A0%C3%25%04%CEE%405%D7%8E%3C%25%87%7C%B0%12%C6T%7C%AA
+1552512795.900744 DEBUG: [nfd.Forwarder] onOutgoingInterest face=258 interest=/localhost/nfd/rib/register/h%15%07%06%08%04testi%02%01%07o%01%FFj%01%00l%01%01/%00%00%01ix%F9D%F6/%BBB%E3%5B%A70L%B3/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%002%F5%F0%8D9u%E1%FBt%02o%D6%DD%2F.%89%90%80%E3x%7D%7C%89%0F%0B%D2k%C2%AD%B3%26%E1%F0L%7CO%15%D9%5D%60%05%ED%C0%CAH%14k%3D%D5d%F0J%DED%A3%9D%3D%0C%E1%7B%DF%BB%C3%7C%DD%86%16%09%B0%DC%A9b%90.%A0%3A%C8%E9%F5%1D%86%86h%40%81%8D%2B%DFk%EC%86%90Ck~%20%3A%03b%A0%DF~%B9%21%BF%F8%91%BD%8F%CC%83%B7%AC%09%14%1E%DC9%2C%92%CA%C0%FD%B55%EA%B7%CE%FC%A4%9E%3A%F0%E8r%7F%B3%9C%60%E7%0A%14%C6%CB%AD%B4%80%E2%0E%9E%3C%2FR%AA%99%18%DB%F8%FD%1D%E8Z%21%D44%C9%3E%F8%17%A9%F2%91yr%117%9A%22%A2%D8h%E0%8F%F9%BC%EEr%BB%E7U.A%A8t%7BS%1Dm%CCX%FC%EC%20%FD%85%F2%BE%C6A%D8%27l%C4T%A8%95%27%07%3F%8D1%DA%C7%B9%F5D%9C%17%3B%1D%06%C1%B4x%14%26%A0%C3%25%04%CEE%405%D7%8E%3C%25%87%7C%B0%12%C6T%7C%AA
+1552512795.904036 INFO: [nfd.RibManager] Adding route /test nexthop=263 origin=static cost=0
+1552512795.906767 DEBUG: [nfd.Forwarder] onIncomingData face=258 data=/localhost/nfd/rib/register/h%15%07%06%08%04testi%02%01%07o%01%FFj%01%00l%01%01/%00%00%01ix%F9D%F6/%BBB%E3%5B%A70L%B3/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%002%F5%F0%8D9u%E1%FBt%02o%D6%DD%2F.%89%90%80%E3x%7D%7C%89%0F%0B%D2k%C2%AD%B3%26%E1%F0L%7CO%15%D9%5D%60%05%ED%C0%CAH%14k%3D%D5d%F0J%DED%A3%9D%3D%0C%E1%7B%DF%BB%C3%7C%DD%86%16%09%B0%DC%A9b%90.%A0%3A%C8%E9%F5%1D%86%86h%40%81%8D%2B%DFk%EC%86%90Ck~%20%3A%03b%A0%DF~%B9%21%BF%F8%91%BD%8F%CC%83%B7%AC%09%14%1E%DC9%2C%92%CA%C0%FD%B55%EA%B7%CE%FC%A4%9E%3A%F0%E8r%7F%B3%9C%60%E7%0A%14%C6%CB%AD%B4%80%E2%0E%9E%3C%2FR%AA%99%18%DB%F8%FD%1D%E8Z%21%D44%C9%3E%F8%17%A9%F2%91yr%117%9A%22%A2%D8h%E0%8F%F9%BC%EEr%BB%E7U.A%A8t%7BS%1Dm%CCX%FC%EC%20%FD%85%F2%BE%C6A%D8%27l%C4T%A8%95%27%07%3F%8D1%DA%C7%B9%F5D%9C%17%3B%1D%06%C1%B4x%14%26%A0%C3%25%04%CEE%405%D7%8E%3C%25%87%7C%B0%12%C6T%7C%AA
+1552512795.906854 DEBUG: [nfd.ContentStore] insert /localhost/nfd/rib/register/h%15%07%06%08%04testi%02%01%07o%01%FFj%01%00l%01%01/%00%00%01ix%F9D%F6/%BBB%E3%5B%A70L%B3/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%002%F5%F0%8D9u%E1%FBt%02o%D6%DD%2F.%89%90%80%E3x%7D%7C%89%0F%0B%D2k%C2%AD%B3%26%E1%F0L%7CO%15%D9%5D%60%05%ED%C0%CAH%14k%3D%D5d%F0J%DED%A3%9D%3D%0C%E1%7B%DF%BB%C3%7C%DD%86%16%09%B0%DC%A9b%90.%A0%3A%C8%E9%F5%1D%86%86h%40%81%8D%2B%DFk%EC%86%90Ck~%20%3A%03b%A0%DF~%B9%21%BF%F8%91%BD%8F%CC%83%B7%AC%09%14%1E%DC9%2C%92%CA%C0%FD%B55%EA%B7%CE%FC%A4%9E%3A%F0%E8r%7F%B3%9C%60%E7%0A%14%C6%CB%AD%B4%80%E2%0E%9E%3C%2FR%AA%99%18%DB%F8%FD%1D%E8Z%21%D44%C9%3E%F8%17%A9%F2%91yr%117%9A%22%A2%D8h%E0%8F%F9%BC%EEr%BB%E7U.A%A8t%7BS%1Dm%CCX%FC%EC%20%FD%85%F2%BE%C6A%D8%27l%C4T%A8%95%27%07%3F%8D1%DA%C7%B9%F5D%9C%17%3B%1D%06%C1%B4x%14%26%A0%C3%25%04%CEE%405%D7%8E%3C%25%87%7C%B0%12%C6T%7C%AA
+1552512795.906924 DEBUG: [nfd.Forwarder] onIncomingData matching=/localhost/nfd/rib/register/h%15%07%06%08%04testi%02%01%07o%01%FFj%01%00l%01%01/%00%00%01ix%F9D%F6/%BBB%E3%5B%A70L%B3/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%002%F5%F0%8D9u%E1%FBt%02o%D6%DD%2F.%89%90%80%E3x%7D%7C%89%0F%0B%D2k%C2%AD%B3%26%E1%F0L%7CO%15%D9%5D%60%05%ED%C0%CAH%14k%3D%D5d%F0J%DED%A3%9D%3D%0C%E1%7B%DF%BB%C3%7C%DD%86%16%09%B0%DC%A9b%90.%A0%3A%C8%E9%F5%1D%86%86h%40%81%8D%2B%DFk%EC%86%90Ck~%20%3A%03b%A0%DF~%B9%21%BF%F8%91%BD%8F%CC%83%B7%AC%09%14%1E%DC9%2C%92%CA%C0%FD%B55%EA%B7%CE%FC%A4%9E%3A%F0%E8r%7F%B3%9C%60%E7%0A%14%C6%CB%AD%B4%80%E2%0E%9E%3C%2FR%AA%99%18%DB%F8%FD%1D%E8Z%21%D44%C9%3E%F8%17%A9%F2%91yr%117%9A%22%A2%D8h%E0%8F%F9%BC%EEr%BB%E7U.A%A8t%7BS%1Dm%CCX%FC%EC%20%FD%85%F2%BE%C6A%D8%27l%C4T%A8%95%27%07%3F%8D1%DA%C7%B9%F5D%9C%17%3B%1D%06%C1%B4x%14%26%A0%C3%25%04%CEE%405%D7%8E%3C%25%87%7C%B0%12%C6T%7C%AA
+1552512795.907009 DEBUG: [nfd.Forwarder] onOutgoingData face=264 data=/localhost/nfd/rib/register/h%15%07%06%08%04testi%02%01%07o%01%FFj%01%00l%01%01/%00%00%01ix%F9D%F6/%BBB%E3%5B%A70L%B3/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%002%F5%F0%8D9u%E1%FBt%02o%D6%DD%2F.%89%90%80%E3x%7D%7C%89%0F%0B%D2k%C2%AD%B3%26%E1%F0L%7CO%15%D9%5D%60%05%ED%C0%CAH%14k%3D%D5d%F0J%DED%A3%9D%3D%0C%E1%7B%DF%BB%C3%7C%DD%86%16%09%B0%DC%A9b%90.%A0%3A%C8%E9%F5%1D%86%86h%40%81%8D%2B%DFk%EC%86%90Ck~%20%3A%03b%A0%DF~%B9%21%BF%F8%91%BD%8F%CC%83%B7%AC%09%14%1E%DC9%2C%92%CA%C0%FD%B55%EA%B7%CE%FC%A4%9E%3A%F0%E8r%7F%B3%9C%60%E7%0A%14%C6%CB%AD%B4%80%E2%0E%9E%3C%2FR%AA%99%18%DB%F8%FD%1D%E8Z%21%D44%C9%3E%F8%17%A9%F2%91yr%117%9A%22%A2%D8h%E0%8F%F9%BC%EEr%BB%E7U.A%A8t%7BS%1Dm%CCX%FC%EC%20%FD%85%F2%BE%C6A%D8%27l%C4T%A8%95%27%07%3F%8D1%DA%C7%B9%F5D%9C%17%3B%1D%06%C1%B4x%14%26%A0%C3%25%04%CEE%405%D7%8E%3C%25%87%7C%B0%12%C6T%7C%AA
+1552512795.907103 DEBUG: [nfd.Forwarder] onIncomingInterest face=258 interest=/localhost/nfd/fib/add-nexthop/h%0F%07%06%08%04testi%02%01%07j%01%00/%00%00%01ix%F9E%00/%18%E0%D5i%94-%1Dr/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00_%FE%BD~%40%C3T%40m%C8Qx%E3%B9%B2%CE%132%88%BDB%C0%B6FW%2A%D0%BFt%F5%B7P%C0c%1E79%E8%133%09%AB%267%D16%CB%C8%A7%A2R%A7%C5%16%EA%97%81m%08%90%7C%E9%25%7C%12q%F2DP%DA%0E%0F9%04%0D%DE%80%F1%3B%BB%91%91%BB%16%CBk%28%0F%D0%D3%8Dj%B3%0D%F5%B8s%F9%11%F4Bp%3FT%933%60%8F%A3%84%A6%14%B9%FF%91%F4%86%2B%A2%28%D1%E6%91%16%10%BB%11%0C%91%CB%8A%A9%3D%95%D6%A7%60%D7%F3%FA%AB%F5%80%CE%E6m%8B%C4%04k%B7%FE%F1%2F%DB%C2h%EF%C0W%2A%DD5q%03%1C%E3bh%82%26N%2F%C4Io%11%13%ED%C4%0C%95%E2%9F%0E%A24%AE%E8Of%AB%BE%85%0Ay%F2zh%96%B0%8E%D9%B9%21u%852%2B%DF%F8%A0%22D%BD%90%7B%88%14bv%AC%A8%92%98%B49%1A.%9C%B0%FF%B1%DFn%B0%B6%96%B2%DErc%0D%7CSJ%1A3%0D%AE5%011%10%B7%94
+1552512795.907167 DEBUG: [nfd.ContentStore] find /localhost/nfd/fib/add-nexthop/h%0F%07%06%08%04testi%02%01%07j%01%00/%00%00%01ix%F9E%00/%18%E0%D5i%94-%1Dr/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00_%FE%BD~%40%C3T%40m%C8Qx%E3%B9%B2%CE%132%88%BDB%C0%B6FW%2A%D0%BFt%F5%B7P%C0c%1E79%E8%133%09%AB%267%D16%CB%C8%A7%A2R%A7%C5%16%EA%97%81m%08%90%7C%E9%25%7C%12q%F2DP%DA%0E%0F9%04%0D%DE%80%F1%3B%BB%91%91%BB%16%CBk%28%0F%D0%D3%8Dj%B3%0D%F5%B8s%F9%11%F4Bp%3FT%933%60%8F%A3%84%A6%14%B9%FF%91%F4%86%2B%A2%28%D1%E6%91%16%10%BB%11%0C%91%CB%8A%A9%3D%95%D6%A7%60%D7%F3%FA%AB%F5%80%CE%E6m%8B%C4%04k%B7%FE%F1%2F%DB%C2h%EF%C0W%2A%DD5q%03%1C%E3bh%82%26N%2F%C4Io%11%13%ED%C4%0C%95%E2%9F%0E%A24%AE%E8Of%AB%BE%85%0Ay%F2zh%96%B0%8E%D9%B9%21u%852%2B%DF%F8%A0%22D%BD%90%7B%88%14bv%AC%A8%92%98%B49%1A.%9C%B0%FF%B1%DFn%B0%B6%96%B2%DErc%0D%7CSJ%1A3%0D%AE5%011%10%B7%94 L
+1552512795.907222 DEBUG: [nfd.ContentStore]   no-match
+1552512795.907232 DEBUG: [nfd.Forwarder] onContentStoreMiss interest=/localhost/nfd/fib/add-nexthop/h%0F%07%06%08%04testi%02%01%07j%01%00/%00%00%01ix%F9E%00/%18%E0%D5i%94-%1Dr/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00_%FE%BD~%40%C3T%40m%C8Qx%E3%B9%B2%CE%132%88%BDB%C0%B6FW%2A%D0%BFt%F5%B7P%C0c%1E79%E8%133%09%AB%267%D16%CB%C8%A7%A2R%A7%C5%16%EA%97%81m%08%90%7C%E9%25%7C%12q%F2DP%DA%0E%0F9%04%0D%DE%80%F1%3B%BB%91%91%BB%16%CBk%28%0F%D0%D3%8Dj%B3%0D%F5%B8s%F9%11%F4Bp%3FT%933%60%8F%A3%84%A6%14%B9%FF%91%F4%86%2B%A2%28%D1%E6%91%16%10%BB%11%0C%91%CB%8A%A9%3D%95%D6%A7%60%D7%F3%FA%AB%F5%80%CE%E6m%8B%C4%04k%B7%FE%F1%2F%DB%C2h%EF%C0W%2A%DD5q%03%1C%E3bh%82%26N%2F%C4Io%11%13%ED%C4%0C%95%E2%9F%0E%A24%AE%E8Of%AB%BE%85%0Ay%F2zh%96%B0%8E%D9%B9%21u%852%2B%DF%F8%A0%22D%BD%90%7B%88%14bv%AC%A8%92%98%B49%1A.%9C%B0%FF%B1%DFn%B0%B6%96%B2%DErc%0D%7CSJ%1A3%0D%AE5%011%10%B7%94
+1552512795.907295 DEBUG: [nfd.Forwarder] onOutgoingInterest face=1 interest=/localhost/nfd/fib/add-nexthop/h%0F%07%06%08%04testi%02%01%07j%01%00/%00%00%01ix%F9E%00/%18%E0%D5i%94-%1Dr/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00_%FE%BD~%40%C3T%40m%C8Qx%E3%B9%B2%CE%132%88%BDB%C0%B6FW%2A%D0%BFt%F5%B7P%C0c%1E79%E8%133%09%AB%267%D16%CB%C8%A7%A2R%A7%C5%16%EA%97%81m%08%90%7C%E9%25%7C%12q%F2DP%DA%0E%0F9%04%0D%DE%80%F1%3B%BB%91%91%BB%16%CBk%28%0F%D0%D3%8Dj%B3%0D%F5%B8s%F9%11%F4Bp%3FT%933%60%8F%A3%84%A6%14%B9%FF%91%F4%86%2B%A2%28%D1%E6%91%16%10%BB%11%0C%91%CB%8A%A9%3D%95%D6%A7%60%D7%F3%FA%AB%F5%80%CE%E6m%8B%C4%04k%B7%FE%F1%2F%DB%C2h%EF%C0W%2A%DD5q%03%1C%E3bh%82%26N%2F%C4Io%11%13%ED%C4%0C%95%E2%9F%0E%A24%AE%E8Of%AB%BE%85%0Ay%F2zh%96%B0%8E%D9%B9%21u%852%2B%DF%F8%A0%22D%BD%90%7B%88%14bv%AC%A8%92%98%B49%1A.%9C%B0%FF%B1%DFn%B0%B6%96%B2%DErc%0D%7CSJ%1A3%0D%AE5%011%10%B7%94
+1552512795.909989 INFO: [nfd.Transport] [id=264,local=unix:///run/nfd.sock,remote=fd://35] setState UP -> CLOSING
+1552512795.910015 DEBUG: [nfd.Forwarder] onInterestFinalize interest=/localhost/nfd/rib/register/h%15%07%06%08%04testi%02%01%07o%01%FFj%01%00l%01%01/%00%00%01ix%F9D%F6/%BBB%E3%5B%A70L%B3/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%002%F5%F0%8D9u%E1%FBt%02o%D6%DD%2F.%89%90%80%E3x%7D%7C%89%0F%0B%D2k%C2%AD%B3%26%E1%F0L%7CO%15%D9%5D%60%05%ED%C0%CAH%14k%3D%D5d%F0J%DED%A3%9D%3D%0C%E1%7B%DF%BB%C3%7C%DD%86%16%09%B0%DC%A9b%90.%A0%3A%C8%E9%F5%1D%86%86h%40%81%8D%2B%DFk%EC%86%90Ck~%20%3A%03b%A0%DF~%B9%21%BF%F8%91%BD%8F%CC%83%B7%AC%09%14%1E%DC9%2C%92%CA%C0%FD%B55%EA%B7%CE%FC%A4%9E%3A%F0%E8r%7F%B3%9C%60%E7%0A%14%C6%CB%AD%B4%80%E2%0E%9E%3C%2FR%AA%99%18%DB%F8%FD%1D%E8Z%21%D44%C9%3E%F8%17%A9%F2%91yr%117%9A%22%A2%D8h%E0%8F%F9%BC%EEr%BB%E7U.A%A8t%7BS%1Dm%CCX%FC%EC%20%FD%85%F2%BE%C6A%D8%27l%C4T%A8%95%27%07%3F%8D1%DA%C7%B9%F5D%9C%17%3B%1D%06%C1%B4x%14%26%A0%C3%25%04%CEE%405%D7%8E%3C%25%87%7C%B0%12%C6T%7C%AA satisfied
+1552512795.910109 INFO: [nfd.Transport] [id=264,local=unix:///run/nfd.sock,remote=fd://35] setState CLOSING -> CLOSED
+1552512795.912564 INFO: [nfd.FaceTable] Removed face id=264 remote=fd://35 local=unix:///run/nfd.sock
+1552512795.912604 DEBUG: [nfd.Forwarder] onIncomingData face=1 data=/localhost/nfd/fib/add-nexthop/h%0F%07%06%08%04testi%02%01%07j%01%00/%00%00%01ix%F9E%00/%18%E0%D5i%94-%1Dr/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00_%FE%BD~%40%C3T%40m%C8Qx%E3%B9%B2%CE%132%88%BDB%C0%B6FW%2A%D0%BFt%F5%B7P%C0c%1E79%E8%133%09%AB%267%D16%CB%C8%A7%A2R%A7%C5%16%EA%97%81m%08%90%7C%E9%25%7C%12q%F2DP%DA%0E%0F9%04%0D%DE%80%F1%3B%BB%91%91%BB%16%CBk%28%0F%D0%D3%8Dj%B3%0D%F5%B8s%F9%11%F4Bp%3FT%933%60%8F%A3%84%A6%14%B9%FF%91%F4%86%2B%A2%28%D1%E6%91%16%10%BB%11%0C%91%CB%8A%A9%3D%95%D6%A7%60%D7%F3%FA%AB%F5%80%CE%E6m%8B%C4%04k%B7%FE%F1%2F%DB%C2h%EF%C0W%2A%DD5q%03%1C%E3bh%82%26N%2F%C4Io%11%13%ED%C4%0C%95%E2%9F%0E%A24%AE%E8Of%AB%BE%85%0Ay%F2zh%96%B0%8E%D9%B9%21u%852%2B%DF%F8%A0%22D%BD%90%7B%88%14bv%AC%A8%92%98%B49%1A.%9C%B0%FF%B1%DFn%B0%B6%96%B2%DErc%0D%7CSJ%1A3%0D%AE5%011%10%B7%94
+1552512795.912659 DEBUG: [nfd.ContentStore] insert /localhost/nfd/fib/add-nexthop/h%0F%07%06%08%04testi%02%01%07j%01%00/%00%00%01ix%F9E%00/%18%E0%D5i%94-%1Dr/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00_%FE%BD~%40%C3T%40m%C8Qx%E3%B9%B2%CE%132%88%BDB%C0%B6FW%2A%D0%BFt%F5%B7P%C0c%1E79%E8%133%09%AB%267%D16%CB%C8%A7%A2R%A7%C5%16%EA%97%81m%08%90%7C%E9%25%7C%12q%F2DP%DA%0E%0F9%04%0D%DE%80%F1%3B%BB%91%91%BB%16%CBk%28%0F%D0%D3%8Dj%B3%0D%F5%B8s%F9%11%F4Bp%3FT%933%60%8F%A3%84%A6%14%B9%FF%91%F4%86%2B%A2%28%D1%E6%91%16%10%BB%11%0C%91%CB%8A%A9%3D%95%D6%A7%60%D7%F3%FA%AB%F5%80%CE%E6m%8B%C4%04k%B7%FE%F1%2F%DB%C2h%EF%C0W%2A%DD5q%03%1C%E3bh%82%26N%2F%C4Io%11%13%ED%C4%0C%95%E2%9F%0E%A24%AE%E8Of%AB%BE%85%0Ay%F2zh%96%B0%8E%D9%B9%21u%852%2B%DF%F8%A0%22D%BD%90%7B%88%14bv%AC%A8%92%98%B49%1A.%9C%B0%FF%B1%DFn%B0%B6%96%B2%DErc%0D%7CSJ%1A3%0D%AE5%011%10%B7%94
+1552512795.912713 DEBUG: [nfd.Forwarder] onIncomingData matching=/localhost/nfd/fib/add-nexthop/h%0F%07%06%08%04testi%02%01%07j%01%00/%00%00%01ix%F9E%00/%18%E0%D5i%94-%1Dr/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00_%FE%BD~%40%C3T%40m%C8Qx%E3%B9%B2%CE%132%88%BDB%C0%B6FW%2A%D0%BFt%F5%B7P%C0c%1E79%E8%133%09%AB%267%D16%CB%C8%A7%A2R%A7%C5%16%EA%97%81m%08%90%7C%E9%25%7C%12q%F2DP%DA%0E%0F9%04%0D%DE%80%F1%3B%BB%91%91%BB%16%CBk%28%0F%D0%D3%8Dj%B3%0D%F5%B8s%F9%11%F4Bp%3FT%933%60%8F%A3%84%A6%14%B9%FF%91%F4%86%2B%A2%28%D1%E6%91%16%10%BB%11%0C%91%CB%8A%A9%3D%95%D6%A7%60%D7%F3%FA%AB%F5%80%CE%E6m%8B%C4%04k%B7%FE%F1%2F%DB%C2h%EF%C0W%2A%DD5q%03%1C%E3bh%82%26N%2F%C4Io%11%13%ED%C4%0C%95%E2%9F%0E%A24%AE%E8Of%AB%BE%85%0Ay%F2zh%96%B0%8E%D9%B9%21u%852%2B%DF%F8%A0%22D%BD%90%7B%88%14bv%AC%A8%92%98%B49%1A.%9C%B0%FF%B1%DFn%B0%B6%96%B2%DErc%0D%7CSJ%1A3%0D%AE5%011%10%B7%94
+1552512795.912777 DEBUG: [nfd.Forwarder] onOutgoingData face=258 data=/localhost/nfd/fib/add-nexthop/h%0F%07%06%08%04testi%02%01%07j%01%00/%00%00%01ix%F9E%00/%18%E0%D5i%94-%1Dr/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00_%FE%BD~%40%C3T%40m%C8Qx%E3%B9%B2%CE%132%88%BDB%C0%B6FW%2A%D0%BFt%F5%B7P%C0c%1E79%E8%133%09%AB%267%D16%CB%C8%A7%A2R%A7%C5%16%EA%97%81m%08%90%7C%E9%25%7C%12q%F2DP%DA%0E%0F9%04%0D%DE%80%F1%3B%BB%91%91%BB%16%CBk%28%0F%D0%D3%8Dj%B3%0D%F5%B8s%F9%11%F4Bp%3FT%933%60%8F%A3%84%A6%14%B9%FF%91%F4%86%2B%A2%28%D1%E6%91%16%10%BB%11%0C%91%CB%8A%A9%3D%95%D6%A7%60%D7%F3%FA%AB%F5%80%CE%E6m%8B%C4%04k%B7%FE%F1%2F%DB%C2h%EF%C0W%2A%DD5q%03%1C%E3bh%82%26N%2F%C4Io%11%13%ED%C4%0C%95%E2%9F%0E%A24%AE%E8Of%AB%BE%85%0Ay%F2zh%96%B0%8E%D9%B9%21u%852%2B%DF%F8%A0%22D%BD%90%7B%88%14bv%AC%A8%92%98%B49%1A.%9C%B0%FF%B1%DFn%B0%B6%96%B2%DErc%0D%7CSJ%1A3%0D%AE5%011%10%B7%94
+1552512795.912891 DEBUG: [nfd.Forwarder] onIncomingData face=1 data=/localhost/nfd/faces/events/%FE%0B
+1552512795.912914 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%0B
+1552512795.912923 DEBUG: [nfd.Forwarder] onIncomingData matching=/localhost/nfd/faces/events/%FE%0B
+1552512795.912942 DEBUG: [nfd.Forwarder] onOutgoingData face=258 data=/localhost/nfd/faces/events/%FE%0B
+1552512795.912976 DEBUG: [nfd.Forwarder] onInterestFinalize interest=/localhost/nfd/fib/add-nexthop/h%0F%07%06%08%04testi%02%01%07j%01%00/%00%00%01ix%F9E%00/%18%E0%D5i%94-%1Dr/%16%1C%1B%01%01%1C%17%07%15%08%04root%08%03KEY%08%08%91%0E%B3F%29%8B%C2%D5/%17%FD%01%00_%FE%BD~%40%C3T%40m%C8Qx%E3%B9%B2%CE%132%88%BDB%C0%B6FW%2A%D0%BFt%F5%B7P%C0c%1E79%E8%133%09%AB%267%D16%CB%C8%A7%A2R%A7%C5%16%EA%97%81m%08%90%7C%E9%25%7C%12q%F2DP%DA%0E%0F9%04%0D%DE%80%F1%3B%BB%91%91%BB%16%CBk%28%0F%D0%D3%8Dj%B3%0D%F5%B8s%F9%11%F4Bp%3FT%933%60%8F%A3%84%A6%14%B9%FF%91%F4%86%2B%A2%28%D1%E6%91%16%10%BB%11%0C%91%CB%8A%A9%3D%95%D6%A7%60%D7%F3%FA%AB%F5%80%CE%E6m%8B%C4%04k%B7%FE%F1%2F%DB%C2h%EF%C0W%2A%DD5q%03%1C%E3bh%82%26N%2F%C4Io%11%13%ED%C4%0C%95%E2%9F%0E%A24%AE%E8Of%AB%BE%85%0Ay%F2zh%96%B0%8E%D9%B9%21u%852%2B%DF%F8%A0%22D%BD%90%7B%88%14bv%AC%A8%92%98%B49%1A.%9C%B0%FF%B1%DFn%B0%B6%96%B2%DErc%0D%7CSJ%1A3%0D%AE5%011%10%B7%94 satisfied
+1552512795.913031 DEBUG: [nfd.Forwarder] onInterestFinalize interest=/localhost/nfd/faces/events/%FE%0B satisfied
+1552512795.913326 DEBUG: [nfd.Forwarder] onIncomingInterest face=258 interest=/localhost/nfd/faces/events/%FE%0C
+1552512795.913357 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE%0C L
+1552512795.913384 DEBUG: [nfd.ContentStore]   no-match
+1552512795.913393 DEBUG: [nfd.Forwarder] onContentStoreMiss interest=/localhost/nfd/faces/events/%FE%0C
+1552512795.913413 DEBUG: [nfd.Forwarder] onOutgoingInterest face=1 interest=/localhost/nfd/faces/events/%FE%0C
+1552512806.343042 INFO: [nfd.UnicastUdpTransport] [id=0,local=udp4://10.0.2.8:6363,remote=udp4://10.0.2.10:6363] Creating transport
+1552512806.343095 INFO: [nfd.FaceTable] Added face id=265 remote=udp4://10.0.2.10:6363 local=udp4://10.0.2.8:6363
+1552512806.345561 DEBUG: [nfd.Forwarder] onIncomingInterest face=265 interest=/test/ping/16574507003950960785
+1552512806.345583 DEBUG: [nfd.ContentStore] find /test/ping/16574507003950960785 L
+1552512806.345600 DEBUG: [nfd.ContentStore]   no-match
+1552512806.345610 DEBUG: [nfd.Forwarder] onContentStoreMiss interest=/test/ping/16574507003950960785
+1552512806.345627 DEBUG: [nfd.Forwarder] onOutgoingInterest face=263 interest=/test/ping/16574507003950960785
+1552512806.345746 DEBUG: [nfd.Forwarder] onIncomingData face=1 data=/localhost/nfd/faces/events/%FE%0C
+1552512806.345764 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%0C
+1552512806.345773 DEBUG: [nfd.Forwarder] onIncomingData matching=/localhost/nfd/faces/events/%FE%0C
+1552512806.345799 DEBUG: [nfd.Forwarder] onOutgoingData face=258 data=/localhost/nfd/faces/events/%FE%0C
+1552512806.345853 DEBUG: [nfd.Forwarder] onInterestFinalize interest=/localhost/nfd/faces/events/%FE%0C satisfied
+1552512806.345985 DEBUG: [nfd.Forwarder] onIncomingInterest face=258 interest=/localhost/nfd/faces/events/%FE%0D
+1552512806.346011 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE%0D L
+1552512806.346035 DEBUG: [nfd.ContentStore]   no-match
+1552512806.346047 DEBUG: [nfd.Forwarder] onContentStoreMiss interest=/localhost/nfd/faces/events/%FE%0D
+1552512806.346063 DEBUG: [nfd.Forwarder] onOutgoingInterest face=1 interest=/localhost/nfd/faces/events/%FE%0D
+1552512806.348691 DEBUG: [nfd.Forwarder] onIncomingData face=263 data=/test/ping/16574507003950960785
+1552512806.348718 DEBUG: [nfd.ContentStore] insert /test/ping/16574507003950960785
+1552512806.348731 DEBUG: [nfd.Forwarder] onIncomingData matching=/test/ping/16574507003950960785
+1552512806.348757 DEBUG: [nfd.Forwarder] onOutgoingData face=265 data=/test/ping/16574507003950960785
+1552512806.349077 DEBUG: [nfd.Forwarder] onInterestFinalize interest=/test/ping/16574507003950960785 satisfied
+1552512807.338994 DEBUG: [nfd.Forwarder] onIncomingInterest face=265 interest=/test/ping/16574507003950960786
+1552512807.339037 DEBUG: [nfd.ContentStore] find /test/ping/16574507003950960786 L
+1552512807.339053 DEBUG: [nfd.ContentStore]   no-match
+1552512807.339058 DEBUG: [nfd.Forwarder] onContentStoreMiss interest=/test/ping/16574507003950960786
+1552512807.339088 DEBUG: [nfd.Forwarder] onOutgoingInterest face=263 interest=/test/ping/16574507003950960786
+1552512807.339847 DEBUG: [nfd.Forwarder] onIncomingData face=263 data=/test/ping/16574507003950960786
+1552512807.339883 DEBUG: [nfd.ContentStore] insert /test/ping/16574507003950960786
+1552512807.339905 DEBUG: [nfd.Forwarder] onIncomingData matching=/test/ping/16574507003950960786
+1552512807.339945 DEBUG: [nfd.Forwarder] onOutgoingData face=265 data=/test/ping/16574507003950960786
+1552512807.340046 DEBUG: [nfd.Forwarder] onInterestFinalize interest=/test/ping/16574507003950960786 satisfied
+1552512812.272064 INFO: [nfd.UnicastUdpTransport] [id=0,local=udp4://10.0.2.8:6363,remote=udp4://10.0.2.7:6363] Creating transport
+1552512812.272094 INFO: [nfd.FaceTable] Added face id=266 remote=udp4://10.0.2.7:6363 local=udp4://10.0.2.8:6363
+1552512812.274086 DEBUG: [nfd.Forwarder] onIncomingInterest face=266 interest=/test/ping/13599167333643041694
+1552512812.274113 DEBUG: [nfd.ContentStore] find /test/ping/13599167333643041694 L
+1552512812.274136 DEBUG: [nfd.ContentStore]   no-match
+1552512812.274150 DEBUG: [nfd.Forwarder] onContentStoreMiss interest=/test/ping/13599167333643041694
+1552512812.274171 DEBUG: [nfd.Forwarder] onOutgoingInterest face=263 interest=/test/ping/13599167333643041694
+1552512812.274292 DEBUG: [nfd.Forwarder] onIncomingData face=1 data=/localhost/nfd/faces/events/%FE%0D
+1552512812.274318 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%0D
+1552512812.274333 DEBUG: [nfd.Forwarder] onIncomingData matching=/localhost/nfd/faces/events/%FE%0D
+1552512812.274366 DEBUG: [nfd.Forwarder] onOutgoingData face=258 data=/localhost/nfd/faces/events/%FE%0D
+1552512812.274429 DEBUG: [nfd.Forwarder] onInterestFinalize interest=/localhost/nfd/faces/events/%FE%0D satisfied
+1552512812.274520 DEBUG: [nfd.Forwarder] onIncomingInterest face=258 interest=/localhost/nfd/faces/events/%FE%0E
+1552512812.274543 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE%0E L
+1552512812.274562 DEBUG: [nfd.ContentStore]   no-match
+1552512812.274575 DEBUG: [nfd.Forwarder] onContentStoreMiss interest=/localhost/nfd/faces/events/%FE%0E
+1552512812.274588 DEBUG: [nfd.Forwarder] onOutgoingInterest face=1 interest=/localhost/nfd/faces/events/%FE%0E
+1552512812.274745 DEBUG: [nfd.Forwarder] onIncomingData face=263 data=/test/ping/13599167333643041694
+1552512812.274765 DEBUG: [nfd.ContentStore] insert /test/ping/13599167333643041694
+1552512812.274785 DEBUG: [nfd.Forwarder] onIncomingData matching=/test/ping/13599167333643041694
+1552512812.274811 DEBUG: [nfd.Forwarder] onOutgoingData face=266 data=/test/ping/13599167333643041694
+1552512812.274887 DEBUG: [nfd.Forwarder] onInterestFinalize interest=/test/ping/13599167333643041694 satisfied
+1552512813.269155 DEBUG: [nfd.Forwarder] onIncomingInterest face=266 interest=/test/ping/13599167333643041695
+1552512813.269197 DEBUG: [nfd.ContentStore] find /test/ping/13599167333643041695 L
+1552512813.269214 DEBUG: [nfd.ContentStore]   no-match
+1552512813.269219 DEBUG: [nfd.Forwarder] onContentStoreMiss interest=/test/ping/13599167333643041695
+1552512813.269234 DEBUG: [nfd.Forwarder] onOutgoingInterest face=263 interest=/test/ping/13599167333643041695
+1552512813.269986 DEBUG: [nfd.Forwarder] onIncomingData face=263 data=/test/ping/13599167333643041695
+1552512813.270008 DEBUG: [nfd.ContentStore] insert /test/ping/13599167333643041695
+1552512813.270024 DEBUG: [nfd.Forwarder] onIncomingData matching=/test/ping/13599167333643041695
+1552512813.270050 DEBUG: [nfd.Forwarder] onOutgoingData face=266 data=/test/ping/13599167333643041695
+1552512813.270111 DEBUG: [nfd.Forwarder] onInterestFinalize interest=/test/ping/13599167333643041695 satisfied
+1552512814.269239 DEBUG: [nfd.Forwarder] onIncomingInterest face=266 interest=/test/ping/13599167333643041696
+1552512814.269282 DEBUG: [nfd.ContentStore] find /test/ping/13599167333643041696 L
+1552512814.269298 DEBUG: [nfd.ContentStore]   no-match
+1552512814.269303 DEBUG: [nfd.Forwarder] onContentStoreMiss interest=/test/ping/13599167333643041696
+1552512814.269316 DEBUG: [nfd.Forwarder] onOutgoingInterest face=263 interest=/test/ping/13599167333643041696
+1552512814.270031 DEBUG: [nfd.Forwarder] onIncomingData face=263 data=/test/ping/13599167333643041696
+1552512814.270067 DEBUG: [nfd.ContentStore] insert /test/ping/13599167333643041696
+1552512814.270092 DEBUG: [nfd.Forwarder] onIncomingData matching=/test/ping/13599167333643041696
+1552512814.270127 DEBUG: [nfd.Forwarder] onOutgoingData face=266 data=/test/ping/13599167333643041696
+1552512814.270496 DEBUG: [nfd.Forwarder] onInterestFinalize interest=/test/ping/13599167333643041696 satisfied
+1552512815.269564 DEBUG: [nfd.Forwarder] onIncomingInterest face=266 interest=/test/ping/13599167333643041697
+1552512815.269606 DEBUG: [nfd.ContentStore] find /test/ping/13599167333643041697 L
+1552512815.269624 DEBUG: [nfd.ContentStore]   no-match
+1552512815.269629 DEBUG: [nfd.Forwarder] onContentStoreMiss interest=/test/ping/13599167333643041697
+1552512815.269647 DEBUG: [nfd.Forwarder] onOutgoingInterest face=263 interest=/test/ping/13599167333643041697
+1552512815.270398 DEBUG: [nfd.Forwarder] onIncomingData face=263 data=/test/ping/13599167333643041697
+1552512815.270429 DEBUG: [nfd.ContentStore] insert /test/ping/13599167333643041697
+1552512815.270452 DEBUG: [nfd.Forwarder] onIncomingData matching=/test/ping/13599167333643041697
+1552512815.270497 DEBUG: [nfd.Forwarder] onOutgoingData face=266 data=/test/ping/13599167333643041697
+1552512815.270611 DEBUG: [nfd.Forwarder] onInterestFinalize interest=/test/ping/13599167333643041697 satisfied
+1552512816.269668 DEBUG: [nfd.Forwarder] onIncomingInterest face=266 interest=/test/ping/13599167333643041698
+1552512816.269706 DEBUG: [nfd.ContentStore] find /test/ping/13599167333643041698 L
+1552512816.269729 DEBUG: [nfd.ContentStore]   no-match
+1552512816.269741 DEBUG: [nfd.Forwarder] onContentStoreMiss interest=/test/ping/13599167333643041698
+1552512816.269763 DEBUG: [nfd.Forwarder] onOutgoingInterest face=263 interest=/test/ping/13599167333643041698
+1552512816.270487 DEBUG: [nfd.Forwarder] onIncomingData face=263 data=/test/ping/13599167333643041698
+1552512816.270514 DEBUG: [nfd.ContentStore] insert /test/ping/13599167333643041698
+1552512816.270528 DEBUG: [nfd.Forwarder] onIncomingData matching=/test/ping/13599167333643041698
+1552512816.270552 DEBUG: [nfd.Forwarder] onOutgoingData face=266 data=/test/ping/13599167333643041698
+1552512816.270617 DEBUG: [nfd.Forwarder] onInterestFinalize interest=/test/ping/13599167333643041698 satisfied
+1552512869.787680 DEBUG: [nfd.Forwarder] onIncomingInterest face=265 interest=/test/g/0
+1552512869.787720 DEBUG: [nfd.ContentStore] find /test/g/0 L
+1552512869.787743 DEBUG: [nfd.ContentStore]   no-match
+1552512869.787749 DEBUG: [nfd.Forwarder] onContentStoreMiss interest=/test/g/0
+1552512869.787775 DEBUG: [nfd.Forwarder] onOutgoingInterest face=263 interest=/test/g/0
+1552512872.273758 DEBUG: [nfd.Forwarder] onInterestFinalize interest=/localhost/nfd/faces/events/%FE%0E unsatisfied
+1552512872.274703 DEBUG: [nfd.Forwarder] onIncomingInterest face=258 interest=/localhost/nfd/faces/events
+1552512872.274737 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events L
+1552512872.274760 DEBUG: [nfd.ContentStore]   no-match
+1552512872.274774 DEBUG: [nfd.Forwarder] onContentStoreMiss interest=/localhost/nfd/faces/events
+1552512872.274793 DEBUG: [nfd.Forwarder] onOutgoingInterest face=1 interest=/localhost/nfd/faces/events
+1552512886.369303 DEBUG: [nfd.Forwarder] onIncomingInterest face=266 interest=/test/g/0
+1552512886.369349 DEBUG: [nfd.Forwarder] onContentStoreMiss interest=/test/g/0
+1552512886.369386 DEBUG: [nfd.Forwarder] onOutgoingInterest face=263 interest=/test/g/0
+1552512910.054615 DEBUG: [nfd.Forwarder] onIncomingData face=263 data=/test/g/0
+1552512910.054653 DEBUG: [nfd.ContentStore] insert /test/g/0
+1552512910.054675 DEBUG: [nfd.Forwarder] onIncomingData matching=/test/g/0
+1552512910.054716 DEBUG: [nfd.Forwarder] onOutgoingData face=266 data=/test/g/0
+1552512910.054815 DEBUG: [nfd.Forwarder] onOutgoingData face=265 data=/test/g/0
+1552512910.054917 DEBUG: [nfd.Forwarder] onInterestFinalize interest=/test/g/0 satisfied

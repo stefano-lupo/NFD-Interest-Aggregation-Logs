@@ -1,0 +1,59 @@
+# Create face and route towards G
+1552512785.997894 INFO: [nfd.UnicastUdpTransport] [id=0,local=udp4://10.0.2.8:6363,remote=udp4://10.0.2.13:6363] Creating transport
+1552512785.997932 INFO: [nfd.FaceTable] Added face id=263 remote=udp4://10.0.2.13:6363 local=udp4://10.0.2.8:6363
+1552512795.904036 INFO: [nfd.RibManager] Adding route /test nexthop=263 origin=static cost=0
+
+
+# Received pings destined for G from A and B
+1552512806.343042 INFO: [nfd.UnicastUdpTransport] [id=0,local=udp4://10.0.2.8:6363,remote=udp4://10.0.2.10:6363] Creating transport
+1552512806.343095 INFO: [nfd.FaceTable] Added face id=265 remote=udp4://10.0.2.10:6363 local=udp4://10.0.2.8:6363
+1552512806.345561 DEBUG: [nfd.Forwarder] onIncomingInterest face=265 interest=/test/ping/16574507003950960785
+1552512806.345583 DEBUG: [nfd.ContentStore] find /test/ping/16574507003950960785 L
+1552512806.345600 DEBUG: [nfd.ContentStore]   no-match
+1552512806.345610 DEBUG: [nfd.Forwarder] onContentStoreMiss interest=/test/ping/16574507003950960785
+1552512806.345627 DEBUG: [nfd.Forwarder] onOutgoingInterest face=263 interest=/test/ping/16574507003950960785
+
+# ..  time ..
+1552512806.348691 DEBUG: [nfd.Forwarder] onIncomingData face=263 data=/test/ping/16574507003950960785
+1552512806.348718 DEBUG: [nfd.ContentStore] insert /test/ping/16574507003950960785
+1552512806.348731 DEBUG: [nfd.Forwarder] onIncomingData matching=/test/ping/16574507003950960785
+1552512806.348757 DEBUG: [nfd.Forwarder] onOutgoingData face=265 data=/test/ping/16574507003950960785
+1552512806.349077 DEBUG: [nfd.Forwarder] onInterestFinalize interest=/test/ping/16574507003950960785 satisfied
+1552512807.338994 DEBUG: [nfd.Forwarder] onIncomingInterest face=265 interest=/test/ping/16574507003950960786
+
+# ... etc..
+
+
+# Incoming interest for /test/g/0 through 265 (from node A)
+1552512869.787680 DEBUG: [nfd.Forwarder] onIncomingInterest face=265 interest=/test/g/0
+1552512869.787720 DEBUG: [nfd.ContentStore] find /test/g/0 L
+1552512869.787743 DEBUG: [nfd.ContentStore]   no-match
+1552512869.787749 DEBUG: [nfd.Forwarder] onContentStoreMiss interest=/test/g/0
+1552512869.787775 DEBUG: [nfd.Forwarder] onOutgoingInterest face=263 interest=/test/g/0
+1552512872.273758 DEBUG: [nfd.Forwarder] onInterestFinalize interest=/localhost/nfd/faces/events/%FE%0E unsatisfied
+
+# Forwarded on to G through 263 (the face we made towards G)
+
+
+
+###################################################################
+# Issue is here: shouldn't this interest NOT be forwarded since 
+# there is an outstnading one from nodeA (face 265)?
+####################################################################
+# Incoming interest for /test/g/0 through 266 (from node B)
+1552512886.369303 DEBUG: [nfd.Forwarder] onIncomingInterest face=266 interest=/test/g/0
+1552512886.369349 DEBUG: [nfd.Forwarder] onContentStoreMiss interest=/test/g/0
+1552512886.369386 DEBUG: [nfd.Forwarder] onOutgoingInterest face=263 interest=/test/g/0
+
+# Forwarded on to G through 253 (the face we made towards G again)???
+
+
+
+# Data comes back from G and is forwarded on correctly through faces 265, 266
+# This part works correctly!
+1552512910.054615 DEBUG: [nfd.Forwarder] onIncomingData face=263 data=/test/g/0
+1552512910.054653 DEBUG: [nfd.ContentStore] insert /test/g/0
+1552512910.054675 DEBUG: [nfd.Forwarder] onIncomingData matching=/test/g/0
+1552512910.054716 DEBUG: [nfd.Forwarder] onOutgoingData face=266 data=/test/g/0
+1552512910.054815 DEBUG: [nfd.Forwarder] onOutgoingData face=265 data=/test/g/0
+1552512910.054917 DEBUG: [nfd.Forwarder] onInterestFinalize interest=/test/g/0 satisfied

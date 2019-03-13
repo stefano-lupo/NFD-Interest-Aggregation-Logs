@@ -1,0 +1,69 @@
+# Create face and route towards E
+1552512760.520189 INFO: [nfd.UnicastUdpTransport] [id=0,local=udp4://10.0.2.7:6363,remote=udp4://10.0.2.8:6363] Creating transport
+1552512760.520223 INFO: [nfd.FaceTable] Added face id=262 remote=udp4://10.0.2.8:6363 local=udp4://10.0.2.7:6363
+1552512764.185948 INFO: [nfd.RibManager] Adding route /test nexthop=262 origin=static cost=0
+
+# Ping G
+1552512812.271800 DEBUG: [nfd.Forwarder] onIncomingInterest face=264 interest=/test/ping/13599167333643041694
+1552512812.271834 DEBUG: [nfd.ContentStore] find /test/ping/13599167333643041694 L
+1552512812.271848 DEBUG: [nfd.ContentStore]   no-match
+1552512812.271853 DEBUG: [nfd.Forwarder] onContentStoreMiss interest=/test/ping/13599167333643041694
+1552512812.271866 DEBUG: [nfd.Forwarder] onOutgoingInterest face=262 interest=/test/ping/13599167333643041694
+1552512812.272019 DEBUG: [nfd.Forwarder] onIncomingData face=1 data=/localhost/nfd/faces/events/%FE%0A
+1552512812.272043 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%0A
+1552512812.272054 DEBUG: [nfd.Forwarder] onIncomingData matching=/localhost/nfd/faces/events/%FE%0A
+1552512812.272079 DEBUG: [nfd.Forwarder] onOutgoingData face=258 data=/localhost/nfd/faces/events/%FE%0A
+1552512812.272130 DEBUG: [nfd.Forwarder] onInterestFinalize interest=/localhost/nfd/faces/events/%FE%0A satisfied
+1552512812.272234 DEBUG: [nfd.Forwarder] onIncomingInterest face=258 interest=/localhost/nfd/faces/events/%FE%0B
+1552512812.272258 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE%0B L
+1552512812.272269 DEBUG: [nfd.ContentStore]   no-match
+1552512812.272273 DEBUG: [nfd.Forwarder] onContentStoreMiss interest=/localhost/nfd/faces/events/%FE%0B
+1552512812.272282 DEBUG: [nfd.Forwarder] onOutgoingInterest face=1 interest=/localhost/nfd/faces/events/%FE%0B
+1552512812.274892 DEBUG: [nfd.Forwarder] onIncomingData face=262 data=/test/ping/13599167333643041694
+1552512812.274911 DEBUG: [nfd.ContentStore] insert /test/ping/13599167333643041694
+1552512812.274926 DEBUG: [nfd.Forwarder] onIncomingData matching=/test/ping/13599167333643041694
+1552512812.274945 DEBUG: [nfd.Forwarder] onOutgoingData face=264 data=/test/ping/13599167333643041694
+1552512812.274981 DEBUG: [nfd.Forwarder] onInterestFinalize interest=/test/ping/13599167333643041694 satisfied
+1552512816.708409 INFO: [nfd.Transport] [id=264,local=unix:///run/nfd.sock,remote=fd://35] setState UP -> CLOSING
+1552512816.708482 INFO: [nfd.Transport] [id=264,local=unix:///run/nfd.sock,remote=fd://35] setState CLOSING -> CLOSED
+1552512816.712119 INFO: [nfd.FaceTable] Removed face id=264 remote=fd://35 local=unix:///run/nfd.sock
+
+
+# Express interest for /test/g/0
+1552512886.365341 INFO: [nfd.UnixStreamTransport] [id=0,local=unix:///run/nfd.sock,remote=fd://35] Creating transport
+1552512886.365381 INFO: [nfd.FaceTable] Added face id=265 remote=fd://35 local=unix:///run/nfd.sock
+1552512886.369028 DEBUG: [nfd.Forwarder] onIncomingInterest face=265 interest=/test/g/0
+1552512886.369059 DEBUG: [nfd.ContentStore] find /test/g/0 L
+1552512886.369071 DEBUG: [nfd.ContentStore]   no-match
+1552512886.369076 DEBUG: [nfd.Forwarder] onContentStoreMiss interest=/test/g/0
+1552512886.369088 DEBUG: [nfd.Forwarder] onOutgoingInterest face=262 interest=/test/g/0
+1552512886.369194 DEBUG: [nfd.Forwarder] onIncomingData face=1 data=/localhost/nfd/faces/events/%FE%0C
+1552512886.369217 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%0C
+1552512886.369228 DEBUG: [nfd.Forwarder] onIncomingData matching=/localhost/nfd/faces/events
+1552512886.369255 DEBUG: [nfd.Forwarder] onOutgoingData face=258 data=/localhost/nfd/faces/events/%FE%0C
+1552512886.369311 DEBUG: [nfd.Forwarder] onInterestFinalize interest=/localhost/nfd/faces/events satisfied
+1552512886.369460 DEBUG: [nfd.Forwarder] onIncomingInterest face=258 interest=/localhost/nfd/faces/events/%FE%0D
+1552512886.369495 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE%0D L
+1552512886.369522 DEBUG: [nfd.ContentStore]   no-match
+1552512886.369537 DEBUG: [nfd.Forwarder] onContentStoreMiss interest=/localhost/nfd/faces/events/%FE%0D
+1552512886.369563 DEBUG: [nfd.Forwarder] onOutgoingInterest face=1 interest=/localhost/nfd/faces/events/%FE%0D
+
+# Got data back from g through E
+1552512910.054864 DEBUG: [nfd.Forwarder] onIncomingData face=262 data=/test/g/0
+1552512910.054903 DEBUG: [nfd.ContentStore] insert /test/g/0
+1552512910.054923 DEBUG: [nfd.Forwarder] onIncomingData matching=/test/g/0
+1552512910.054963 DEBUG: [nfd.Forwarder] onOutgoingData face=265 data=/test/g/0
+1552512910.055039 DEBUG: [nfd.Forwarder] onInterestFinalize interest=/test/g/0 satisfied
+1552512910.055402 INFO: [nfd.Transport] [id=265,local=unix:///run/nfd.sock,remote=fd://35] setState UP -> CLOSING
+1552512910.055462 INFO: [nfd.Transport] [id=265,local=unix:///run/nfd.sock,remote=fd://35] setState CLOSING -> CLOSED
+1552512910.059050 INFO: [nfd.FaceTable] Removed face id=265 remote=fd://35 local=unix:///run/nfd.sock
+1552512910.059163 DEBUG: [nfd.Forwarder] onIncomingData face=1 data=/localhost/nfd/faces/events/%FE%0D
+1552512910.059186 DEBUG: [nfd.ContentStore] insert /localhost/nfd/faces/events/%FE%0D
+1552512910.059196 DEBUG: [nfd.Forwarder] onIncomingData matching=/localhost/nfd/faces/events/%FE%0D
+1552512910.059226 DEBUG: [nfd.Forwarder] onOutgoingData face=258 data=/localhost/nfd/faces/events/%FE%0D
+1552512910.059286 DEBUG: [nfd.Forwarder] onInterestFinalize interest=/localhost/nfd/faces/events/%FE%0D satisfied
+1552512910.059454 DEBUG: [nfd.Forwarder] onIncomingInterest face=258 interest=/localhost/nfd/faces/events/%FE%0E
+1552512910.059489 DEBUG: [nfd.ContentStore] find /localhost/nfd/faces/events/%FE%0E L
+1552512910.059527 DEBUG: [nfd.ContentStore]   no-match
+1552512910.059542 DEBUG: [nfd.Forwarder] onContentStoreMiss interest=/localhost/nfd/faces/events/%FE%0E
+1552512910.059565 DEBUG: [nfd.Forwarder] onOutgoingInterest face=1 interest=/localhost/nfd/faces/events/%FE%0E

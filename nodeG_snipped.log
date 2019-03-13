@@ -1,0 +1,62 @@
+# ... snip
+
+
+# Start up ping server using `ndnpingserver /test`
+1552512802.515298 INFO: [nfd.RibManager] Adding route /test/ping nexthop=261 origin=app cost=0
+
+# Here come the pings!
+1552512806.345785 INFO: [nfd.UnicastUdpTransport] [id=0,local=udp4://10.0.2.13:6363,remote=udp4://10.0.2.8:6363] Creating transport
+
+# Face towards nodeE is created in response to the pings (262) 
+1552512806.345815 INFO: [nfd.FaceTable] Added face id=262 remote=udp4://10.0.2.8:6363 local=udp4://10.0.2.13:6363
+1552512806.348210 DEBUG: [nfd.Forwarder] onIncomingInterest face=262 interest=/test/ping/16574507003950960785
+1552512806.348231 DEBUG: [nfd.ContentStore] find /test/ping/16574507003950960785 L
+1552512806.348248 DEBUG: [nfd.ContentStore]   no-match
+1552512806.348259 DEBUG: [nfd.Forwarder] onContentStoreMiss interest=/test/ping/16574507003950960785
+1552512806.348275 DEBUG: [nfd.Forwarder] onOutgoingInterest face=261 interest=/test/ping/16574507003950960785
+1552512806.348535 DEBUG: [nfd.Forwarder] onIncomingData face=261 data=/test/ping/16574507003950960785
+1552512806.348557 DEBUG: [nfd.ContentStore] insert /test/ping/16574507003950960785
+1552512806.348574 DEBUG: [nfd.Forwarder] onIncomingData matching=/test/ping/16574507003950960785
+1552512806.348601 DEBUG: [nfd.Forwarder] onOutgoingData face=262 data=/test/ping/16574507003950960785
+1552512806.348805 DEBUG: [nfd.Forwarder] onInterestFinalize interest=/test/ping/16574507003950960785 satisfied
+
+# .. more ping responses
+
+# Register prefix for /test/g using Java app: face 263 is NFD --> Java app?
+1552512844.448580 INFO: [nfd.TcpTransport] [id=0,local=tcp4://127.0.0.1:6363,remote=tcp4://127.0.0.1:39560] Creating transport
+1552512844.448601 INFO: [nfd.FaceTable] Added face id=263 remote=tcp4://127.0.0.1:39560 local=tcp4://127.0.0.1:6363
+
+# First interest for /test/g/0 arrives from nodeA through nodeE
+
+# Interest comes in over 262 (udp tunnel to nodeE)
+1552512869.787902 DEBUG: [nfd.Forwarder] onIncomingInterest face=262 interest=/test/g/0
+1552512869.787940 DEBUG: [nfd.ContentStore] find /test/g/0 L
+1552512869.787963 DEBUG: [nfd.ContentStore]   no-match
+1552512869.787974 DEBUG: [nfd.Forwarder] onContentStoreMiss interest=/test/g/0
+
+# Forwarded on to Java app through 263
+1552512869.787994 DEBUG: [nfd.Forwarder] onOutgoingInterest face=263 interest=/test/g/0
+
+# SECOND INTEREST FOR SAME DATA NAME arrives from 262 -
+# This is nodeB's interest for /test/g/0 which was sent here through nodeE also (262)
+1552512886.369509 DEBUG: [nfd.Forwarder] onIncomingInterest face=262 interest=/test/g/0
+1552512886.369551 DEBUG: [nfd.Forwarder] onContentStoreMiss interest=/test/g/0
+
+# Also forward that on to java app through 263
+1552512886.369584 DEBUG: [nfd.Forwarder] onOutgoingInterest face=263 interest=/test/g/0
+
+# I haven't run face.processEvents() at this point or sent any data back yet
+
+# Data comes from Java app through 263
+1552512910.054340 DEBUG: [nfd.Forwarder] onIncomingData face=263 data=/test/g/0
+# Cached
+1552512910.054391 DEBUG: [nfd.ContentStore] insert /test/g/0
+1552512910.054410 DEBUG: [nfd.Forwarder] onIncomingData matching=/test/g/0
+# Data is sent out through 262 (face of UDP tunnel to nodeE)
+1552512910.054455 DEBUG: [nfd.Forwarder] onOutgoingData face=262 data=/test/g/0
+1552512910.054587 DEBUG: [nfd.Forwarder] onInterestFinalize interest=/test/g/0 satisfied
+
+# The Java app received the second interest and is now sending the response for that interest
+# NFD marks it as unsolicited (as it should)
+1552512920.055646 DEBUG: [nfd.Forwarder] onIncomingData face=263 data=/test/g/0
+1552512920.055694 DEBUG: [nfd.Forwarder] onDataUnsolicited face=263 data=/test/g/0 decision=drop
