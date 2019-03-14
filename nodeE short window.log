@@ -1,0 +1,61 @@
+###################################################
+# Node E's NFD logs
+###################################################
+
+# Intrest arrives from node B
+1552566720.350052 DEBUG: [nfd.Forwarder] onIncomingInterest face=264 interest=/test/g/32 [14/875]
+1552566720.350093 DEBUG: [nfd.ContentStore] find /test/g/32 L
+1552566720.350150 DEBUG: [nfd.ContentStore]   no match                                                                   
+1552566720.350171 DEBUG: [nfd.Forwarder] onContentStoreMiss interest=/test/g/32
+# Forwarded upstream to G
+1552566720.350194 DEBUG: [nfd.Forwarder] onOutgoingInterest face=262 interest=/test/g/32
+
+
+# 6ms later, interest arrives from node A
+1552566720.412176 DEBUG: [nfd.Forwarder] onIncomingInterest face=266 interest=/test/g/32
+1552566720.412211 DEBUG: [nfd.Forwarder] onContentStoreMiss interest=/test/g/32
+# Again forwarded to G
+1552566720.412268 DEBUG: [nfd.Forwarder] onOutgoingInterest face=262 interest=/test/g/32
+
+# Data arrives from G
+1552566767.039557 DEBUG: [nfd.Forwarder] onIncomingData face=262 data=/test/g/32
+1552566767.039600 DEBUG: [nfd.ContentStore] insert /test/g/32
+1552566767.039632 DEBUG: [nfd.Forwarder] onIncomingData matching=/test/g/32
+
+# Data forwarded to both node A and node B
+1552566767.039687 DEBUG: [nfd.Forwarder] onOutgoingData face=264 data=/test/g/32
+1552566767.039793 DEBUG: [nfd.Forwarder] onOutgoingData face=266 data=/test/g/32
+1552566767.039909 DEBUG: [nfd.Forwarder] onInterestFinalize interest=/test/g/32 satisfied
+
+
+
+
+###################################################
+# Node G's NFD logs
+###################################################
+
+# Node B's interest received from node E
+1552566720.350304 DEBUG: [nfd.Forwarder] onIncomingInterest face=262 interest=/test/g/32 [46/943]
+1552566720.350333 DEBUG: [nfd.ContentStore] find /test/g/32 L                        
+1552566720.350353 DEBUG: [nfd.ContentStore]   no-match                           
+1552566720.350358 DEBUG: [nfd.Forwarder] onContentStoreMiss interest=/test/g/32 
+# Forwarded to jNDN app                                               
+1552566720.350370 DEBUG: [nfd.Forwarder] onOutgoingInterest face=263 interest=/test/g/32
+
+# Node A's interest received from node E
+1552566720.412389 DEBUG: [nfd.Forwarder] onIncomingInterest face=262 interest=/test/g/32                                        
+1552566720.412422 DEBUG: [nfd.Forwarder] onContentStoreMiss interest=/test/g/32         
+# Forwarded to jNDN app
+1552566720.412450 DEBUG: [nfd.Forwarder] onOutgoingInterest face=263 interest=/test/g/32   
+
+# Data received from jNDN app abd 
+1552566767.039239 DEBUG: [nfd.Forwarder] onIncomingData face=263 data=/test/g/32
+1552566767.039288 DEBUG: [nfd.ContentStore] insert /test/g/32
+1552566767.039320 DEBUG: [nfd.Forwarder] onIncomingData matching=/test/g/32
+
+# Data forwarded to E
+1552566767.039379 DEBUG: [nfd.Forwarder] onOutgoingData face=262 data=/test/g/32                                                          
+1552566767.039530 DEBUG: [nfd.Forwarder] onInterestFinalize interest=/test/g/32 satisfied                                                                                                                                         
+# Second instance of same Data received from jNDN app is dropped as no PIT entry anymore 
+1552566777.040214 DEBUG: [nfd.Forwarder] onIncomingData face=263 data=/test/g/32
+1552566777.040273 DEBUG: [nfd.Forwarder] onDataUnsolicited face=263 data=/test/g/32 decision=drop 
